@@ -26,7 +26,7 @@ urlpatterns = [
 
     # General Pages
     path('', views.home, name='home'),
-
+    path("agb/", views.agb, name="agb"),
     # Account
     path("accounts/", include("django.contrib.auth.urls")),
 
