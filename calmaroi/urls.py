@@ -26,7 +26,13 @@ urlpatterns = [
 
     # General Pages
     path('', views.home, name='home'),
-    path("agb/", views.agb, name="agb"),
+    path("persoenlicheinfos/", views.persoenlicheinfos, name="persoenlicheinfos"),
+    path("bildungsweg/", views.bildungsweg, name="bildungsweg"),
+    path("dokumente/", views.dokumente, name="dokumente"),
+    path("fragebogen/", views.fragebogen, name="fragebogen"),
+    path("datenschutz/", views.datenschutz, name="datenschutz"),
+    path("uebersicht/", views.uebersicht, name="uebersicht"),
+
     # Account
     path("accounts/", include("django.contrib.auth.urls")),
 
