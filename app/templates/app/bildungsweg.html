@@ -1,5 +1,5 @@
 {% extends "app/base.html" %}
-{% load static %}
+{% load static extra_tags %}
 
 {% block css %}
 <link rel="stylesheet" href="{% static 'app/css/output.css' %}">
@@ -117,18 +117,26 @@
 		<label for="acquired-degree" class="block text-sm font-medium text-gray-700">Erworbener Schulabschluss</label>
 		<select id="acquired-degree" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
 			<option value="">Bitte auswählen</option>
+			{%get_choices 'DegreeChoices' as degrees %}
+			{% for item in degrees %}	
+			<option value="{{ item.0 }}">{{ item.1 }}</option>
+			{% endfor %}
 		</select>
 	</div>
 	<div class="w-full md:w-1/2 px-2">
 		<label for="expected-degree" class="block text-sm font-medium text-gray-700">zu erwartender Schulabschluss</label>
 		<select id="expected-degree" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
 			<option value="">Bitte auswählen</option>
+			{%get_choices 'DegreeChoices' as degrees %}
+			{% for item in degrees %}	
+			<option value="{{ item.0 }}">{{ item.1 }}</option>
+			{% endfor %}
 		</select>
 	</div>
 </div>
 <!-- input felder div -->
 <div class="border-b-2  border-gray-200">
-	<h1 class="text-gray-500 text-m">Bitte trage, soweit erhalten, folgende Noten deines letzten Zeugnisses ein</h1>
+	<h1 class="text-gray-500 text-m my-4">Bitte trage, soweit erhalten, folgende Noten deines letzten Zeugnisses ein</h1>
 	<div class="flex flex-wrap -mx-2 mb-4 py-4">
 		<div class="w-full md:w-1/2 px-2 mb-4 md:mb-0">
 			<label for="german-grade" class="block text-sm font-medium text-gray-700">Note in Deutsch</label>
@@ -167,12 +175,20 @@
 			<label for="country" class="block text-sm font-medium text-gray-700">Land</label>
 			<select id="country" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
 				<option value="">Bitte auswählen</option>
+				{%get_choices 'CountryChoices' as countries %}
+				{% for item in countries %}
+				<option value="{{ item.0 }}">{{ item.1 }}</option>
+				{% endfor %}
 			</select>
 		</div>
 		<div class="w-full md:w-1/2 px-2">
 			<label for="state" class="block text-sm font-medium text-gray-700">Bundesland</label>
 			<select id="state" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
 				<option value="">Bitte auswählen</option>
+				{%get_choices 'StateChoices' as states %}
+				{% for item in states %}
+				<option value="{{ item.0 }}">{{ item.1 }}</option>
+				{% endfor %}
 			</select>
 		</div>
 	</div>
@@ -212,13 +228,14 @@
 						<form class="space-y-4" action="#">
 							<div>
 								<label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Abschluss</label>
-								<select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+								<select id="Abschluss" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
 									<option selected>Abschluss</option>
-									<option value="Praktikum">Praktikum</option>
-									<option value="Universitätsabschluss">Universitätsabschluss</option>
-									<option value="Schulabschluss">Schulabschluss</option>
-									<option value="anderes">anderes</option>
-								  </select>								</div>
+									{%get_choices 'DiplomaChoices' as diplomas %}
+									{% for item in diplomas %}
+									<option value="{{ item.0 }}">{{ item.1 }}</option>
+									{% endfor %}
+								  </select>								
+								</div>
 							<div>
 								<label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Institution</label>
 								<input type="text" id="Institution" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
@@ -234,7 +251,7 @@
 											<path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
 										</svg>
 									</div>
-									<input name="start" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date start">
+									<input name="start" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="von">
 									</div>
 									<span class="mx-4 text-gray-500">to</span>
 									<div class="relative">
@@ -243,7 +260,7 @@
 											<path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
 										</svg>
 									</div>
-									<input name="end" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date end">
+									<input name="end" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="bis">
 								</div>
 								</div>
   

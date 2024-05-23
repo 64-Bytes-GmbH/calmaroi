@@ -1,3 +1,5 @@
+from .choices import *
+
 """ Views """
 
 from django.shortcuts import render

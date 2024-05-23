@@ -1,5 +1,5 @@
 {% extends "app/base.html" %}
-{% load static %}
+{% load static  extra_tags %}
 
 {% block css %}
 <link rel="stylesheet" href="{% static 'app/css/output.css' %}">
@@ -142,8 +142,9 @@
 	</div>
 
 	<div class="my-3">
-		<h1 class="text-gray-500 text-m">Bitte trage, soweit erhalten, folgende Noten deines letzten Zeugnisses ein</h1>
-	
+		<div class="mt-5">
+			<h1 class="text-gray-500 text-m">Bitte trage, soweit erhalten, folgende Noten deines letzten Zeugnisses ein</h1>
+		</div>
 		<div class="mb-4 py-3">
 						
 			<!-- Modal toggle -->
@@ -175,11 +176,12 @@
 									<label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Datei art auswählen</label>
 									<select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
 										<option selected>Datei art auswählen</option>
-										<option value="Praktikum">Praktikum</option>
-										<option value="Zeugnis">weitere Zeugnisse</option>
-										<option value="FR">France</option>
-										<option value="DE">Germany</option>
-									  </select>								</div>
+										{%get_choices 'FilesCoices' as Files %}
+										{% for item in Files %}
+										<option value="{{ item.0 }}">{{ item.1 }}</option>
+										{% endfor %}
+									  </select>								
+									</div>
 								<div>
 									<label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Datei auswählen</label>
 									<input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="file_input" type="file">

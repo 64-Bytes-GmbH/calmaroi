@@ -1,5 +1,5 @@
 {% extends "app/base.html" %}
-{% load static %}
+{% load static extra_tags %}
 
 {% block css %}
 <link rel="stylesheet" href="{% static 'app/css/output.css' %}">
@@ -296,12 +296,12 @@
 				<div class="mb-5 mt-10">Ich bewerbe mich für die Ausbildungsrichtung</div>	
 					<form class="w-1/2">
 						<!-- <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Ich bewerbe mich für die Ausbildungsrichtung</label> -->
-						<select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+						<select id="Ausbildungsrichtung" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
 						<option selected>Bitte auswählen</option>
-						<option value="US">United States</option>
-						<option value="CA">Canada</option>
-						<option value="FR">France</option>
-						<option value="DE">Germany</option>
+						{% get_choices 'TrainigChoices' as choices %}
+						{% for item in choices %}
+							<option value="{{ item.0 }}">{{ item.1 }}</option>
+						{% endfor %}
 						</select>
 					</form>
 			</div>
@@ -312,12 +312,13 @@
 				<div class="mb-5 mt-10">Nur für MTR-Bewerbungen: Die praktischen Einsätze bitte am Campus</div>
 					<form class="w-1/2">
 						<!-- <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nur für MTR-Bewerbungen: Die praktischen Einsätze bitte am Campus</label> -->
-						<select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-						<option selected>Bitte auswählen</option>
-						<option value="US">United States</option>
-						<option value="CA">Canada</option>
-						<option value="FR">France</option>
-						<option value="DE">Germany</option>
+						<select id="Campus" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+							<option selected>Bitte auswählen</option>
+							{% get_choices 'CampusChoices' as choices %}
+							{% for item in choices %}
+								<option value="{{ item.0 }}">{{ item.1 }}</option>
+							{% endfor %}
+
 						</select>
 					</form>
 			</div>
