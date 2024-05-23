@@ -125,10 +125,10 @@
 
 
 	<!-- container -->
-	<div class="max-w-screen-xl flex   mx-auto mt-8 min-w-[80rem] shadow-xl h-auto ">
+	<div class="max-w-screen-xl flex mx-auto mt-8 min-w-[80rem] shadow-xl h-max  overflow-auto">
 
 		<!-- left -->
-		<div class=" flex flex-col  bg-primary-500 rounded-l-2xl box-border   h-[963px] w-1/4 p-12">
+		<div class=" flex flex-col bg-primary-500 rounded-l-2xl box-border w-1/4 p-12">
 
 			<!-- tittel -->
 			<div class="  my-5">
@@ -142,7 +142,7 @@
 
 
 		<!-- right -->
-		<div class="h-fill  bg-white rounded-r-2xl w-3/4 h-[963px]  p-12">
+		<div class="  bg-white rounded-r-2xl w-3/4  h-full p-12">
 
 
 			{% block contentright %}
@@ -154,6 +154,30 @@
 
 
 
+	<!-- sticky footer -->
+	<div id="bottom-banner" tabindex="-1" class="sticky bottom-0 start-0 z-50 flex justify-between w-full p-2 border-t border-gray-200 bg-white dark:bg-gray-700 dark:border-gray-600 shadow-inner">
+			
+			<!-- back button -->
+			<div class="mx-28">
+				<button type="button" class="text-white bg-primary-500 hover:bg-primary-300 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm  pr-2.5 py-2.5 flex items-center space-x-2">
+					<svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14 8-4 4 4 4"/>
+					</svg>
+					<span>Zurück</span>
+				</button>    
+			</div>		
+			
+			<!-- submit button -->
+			<div class="mx-28">
+				<button type="submit" class="text-white bg-primary-500 hover:bg-primary-300 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm pl-2.5 py-2.5 flex items-center space-x-2 ">
+					<span>Weiter</span>
+					<svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m10 16 4-4-4-4"/>
+					</svg>
+				</button>     
+			</div>
+	</div>
+
 
 
 
@@ -161,8 +185,16 @@
 	{% endblock %}
 
 
+
+
+	
+			
+	
+	
+
 	<script src="{% static 'app/js/flowbite.min.js' %}"></script>
 
 </body>
+
 
 </html>

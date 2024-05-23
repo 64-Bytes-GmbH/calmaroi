@@ -121,6 +121,7 @@
 
 <!-- right side -->
 {% block contentright %}
+
 <div class="">
 	<h6 class="font-extrabold text-2xl">Für welches Gebiet bewirbst du dich?</h6>
 </div>
@@ -132,15 +133,12 @@
 	<!-- accordion -->
 	<div>
 
-		<div id="accordion-arrow-icon" data-accordion="open">
-			<h2 id="accordion-arrow-icon-heading-1">
-				<button type="button"
+		<div id="accordion-arrow-icon" data-accordion="hidden">
+				<div
 					class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-white bg-primary-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-white dark:bg-gray-800  dark:hover:bg-gray-800 gap-3"
-					data-accordion-target="#accordion-arrow-icon-body-1" aria-expanded="true"
-					aria-controls="accordion-arrow-icon-body-1">
+					 aria-expanded="false">
 					<span>Ausbildung in der Krankenpflegehilfe</span>
-				</button>
-			</h2>
+		</div>
 			
 			<!-- first text and date section -->
 			<div
@@ -198,7 +196,7 @@
 
 
 			
-		<div>
+		
 
 
 		<!-- accordions -->
@@ -288,7 +286,7 @@
 					</div>
 				</div>
 
-
+			</div>	
 
 				<!-- end of all accordions -->
 
@@ -325,19 +323,10 @@
 			</div>
 			<!-- end of all selectors -->
 
-			<div class="col-span-1 md:col-span-2 flex justify-between">
-				<div></div>
-				<button type="submit" class="text-white bg-primary-500 hover:bg-primary-300 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm pl-2.5 py-2.5 flex items-center space-x-2 ">
-					<span>Weiter</span>
-					<svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m10 16 4-4-4-4"/>
-					</svg>
-				</button>
-			</div>
 			
-	</div>
+		</div>
 
-</div>
+	</div>
 
 {% endblock %}
 
