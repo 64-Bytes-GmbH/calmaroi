@@ -1,4 +1,6 @@
 from .choices import *
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
 """ Views """
 
@@ -71,4 +73,25 @@ def uebersicht(request):
 
 
 
-    
+@csrf_exempt
+def add_education(request):
+    if request.method == 'POST':
+        abschluss = request.POST.get('abschluss')
+        institution = request.POST.get('institution')
+        start_date = request.POST.get('start_date')
+        end_date = request.POST.get('end_date')
+
+        # Hier sollten Sie die Logik hinzufügen, um die Daten in der Datenbank zu speichern
+        
+
+        return JsonResponse({
+            'status': 'success',
+            'data': {
+                'abschluss': abschluss,
+                'institution': institution,
+                'start_date': start_date,
+                'end_date': end_date
+            }
+        })
+
+    return JsonResponse({'status': 'error'}, status=400)

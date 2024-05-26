@@ -32,6 +32,7 @@ urlpatterns = [
     path("fragebogen/", views.fragebogen, name="fragebogen"),
     path("datenschutz/", views.datenschutz, name="datenschutz"),
     path("uebersicht/", views.uebersicht, name="uebersicht"),
+    path('add-education/', views.add_education, name='add_education'),
 
     # Account
     path("accounts/", include("django.contrib.auth.urls")),
