@@ -6,7 +6,7 @@ SalutationOptions = [
     ('other', 'Diverse'),
 ]
 
-FilesCoices = [
+FilesChoices = [
     ('Lebenslauf', 'Lebenslauf'),
     ('Zeugnisse', 'Zeugnisse'),
     ('Sonstiges', 'Sonstiges'),

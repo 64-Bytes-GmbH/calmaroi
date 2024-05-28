@@ -33,6 +33,9 @@ urlpatterns = [
     path("datenschutz/", views.datenschutz, name="datenschutz"),
     path("uebersicht/", views.uebersicht, name="uebersicht"),
     path('add-education/', views.add_education, name='add_education'),
+    path('upload-file/', views.upload_file, name='upload_file'),
+
+
 
     # Account
     path("accounts/", include("django.contrib.auth.urls")),

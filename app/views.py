@@ -76,22 +76,45 @@ def uebersicht(request):
 @csrf_exempt
 def add_education(request):
     if request.method == 'POST':
-        abschluss = request.POST.get('abschluss')
-        institution = request.POST.get('institution')
-        start_date = request.POST.get('start_date')
-        end_date = request.POST.get('end_date')
 
-        # Hier sollten Sie die Logik hinzufügen, um die Daten in der Datenbank zu speichern
-        
+        data = {}
 
-        return JsonResponse({
-            'status': 'success',
-            'data': {
+        if "addEducation" in request.POST:
+
+            education_id = request.POST.get('id')
+            abschluss = request.POST.get('abschluss')
+            institution = request.POST.get('institution')
+            start_date = request.POST.get('start_date')
+            end_date = request.POST.get('end_date')
+
+            # Hier sollten Sie die Logik hinzufügen, um die Daten in der Datenbank zu speichern
+            data = {
+                "id": "1", # Hier sollte die ID des Datensatzes stehen, den Sie gerade erstellt haben
                 'abschluss': abschluss,
                 'institution': institution,
                 'start_date': start_date,
                 'end_date': end_date
             }
-        })
+
+            return JsonResponse({
+                'status': 'success',
+                'data': data
+            })
 
     return JsonResponse({'status': 'error'}, status=400)
+
+
+
+@csrf_exempt
+def upload_file(request):
+    if request.method == 'POST':
+        file = request.FILES.get('file')
+        if file:
+            file_name = default_storage.save(file.name, ContentFile(file.read()))
+            file_size = file.size / (1024 * 1024)  # Size in MB
+            response_data = {
+                'filename': file.name,
+                'filesize': round(file_size, 2)  # Round file size to 2 decimal places
+            }
+            return JsonResponse(response_data)
+    return JsonResponse({'error': 'File upload failed'}, status=400)
