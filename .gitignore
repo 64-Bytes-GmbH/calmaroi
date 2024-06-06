@@ -145,5 +145,4 @@ static/CACHE/js/output.*.js
 db.sqlite3
 package-lock.json
 node_modules/
-package.json
 .pylintrc

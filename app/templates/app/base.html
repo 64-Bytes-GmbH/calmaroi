@@ -5,16 +5,14 @@
 <html lang="en">
 
 <head>
+	<title>{% block title %}calmaroi{% endblock %}</title>
 	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flowbite@1.5.3/dist/flowbite.min.css" /> -->
 	<link rel="stylesheet" href="../../static/app/css/output.css" rel="stylesheet">
 	{% block css %}
 	{% endblock %}
-
-
-
 </head>
 
-<body>
+<body class="flex flex-col min-h-screen">
 	<!-- Navbar -->
 	<nav class="bg-white border-gray-200 dark:bg-gray-900">
 		<div class="shadow-lg w-full">
@@ -116,85 +114,65 @@
 
 				</div>
 			</div>
+		</div>
 	</nav>
 
-
-
-
-
-
-
 	<!-- container -->
-	<div class="max-w-screen-xl flex mx-auto mt-8 min-w-[80rem] shadow-xl h-max  overflow-auto">
+	<div class="max-w-screen-xl flex mx-auto mt-8 min-w-[80rem] rounded-l-2xl shadow-xl h-max overflow-auto">
 
 		<!-- left -->
 		<div class=" flex flex-col bg-primary-500 rounded-l-2xl box-border w-1/4 p-12">
 
-			<!-- tittel -->
+			<!-- title -->
 			<div class="  my-5">
 				<h1 class="text-white text-2xl">Onlinebewerbung</h1>
 			</div>
+
 			{% block contentleft %}
 			{% endblock %}
-
-
 		</div>
-
 
 		<!-- right -->
 		<div class="  bg-white rounded-r-2xl w-3/4  h-full p-12">
-
-
 			{% block contentright %}
 			{% endblock %}
-
 		</div>
 
 	</div>
 
-
-
 	<!-- sticky footer -->
-	<div id="bottom-banner" tabindex="-1" class="sticky bottom-0 start-0 z-50 flex justify-between w-full p-2 border-t border-gray-200 bg-white dark:bg-gray-700 dark:border-gray-600 shadow-inner">
-			
+	<div id="bottom-banner" tabindex="-1"
+		class="mt-auto sticky bottom-0 start-0 z-50 w-full p-2 border-t border-gray-200 bg-white dark:bg-gray-700 dark:border-gray-600 shadow-inner">
+		<div class="max-w-screen-xl flex justify-between mx-auto">
 			<!-- back button -->
-			<div class="mx-28">
-				<button type="button" class="text-white bg-primary-500 hover:bg-primary-300 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm  pr-2.5 py-2.5 flex items-center space-x-2">
-					<svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14 8-4 4 4 4"/>
-					</svg>
-					<span>Zurück</span>
-				</button>    
-			</div>		
-			
+			<button type="button"
+				class="text-white bg-primary-500 hover:bg-primary-300 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm  pr-2.5 py-2.5 flex items-center space-x-2">
+				<svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+					width="24" height="24" fill="none" viewBox="0 0 24 24">
+					<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+						d="m14 8-4 4 4 4" />
+				</svg>
+				<span>Zurück</span>
+			</button>
+	
 			<!-- submit button -->
-			<div class="mx-28">
-				<button type="submit" class="text-white bg-primary-500 hover:bg-primary-300 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm pl-2.5 py-2.5 flex items-center space-x-2 ">
-					<span>Weiter</span>
-					<svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m10 16 4-4-4-4"/>
-					</svg>
-				</button>     
-			</div>
+			<button type="submit"
+				class="text-white bg-primary-500 hover:bg-primary-300 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm pl-2.5 py-2.5 flex items-center space-x-2 ">
+				<span>Weiter</span>
+				<svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+					width="24" height="24" fill="none" viewBox="0 0 24 24">
+					<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+						d="m10 16 4-4-4-4" />
+				</svg>
+			</button>
+		</div>
 	</div>
-
-
-
 
 	{% block scripts %}
 	{% endblock %}
 
-
-
-
-	
-			
-	
-	
-
 	<script src="{% static 'app/js/flowbite.min.js' %}"></script>
 
 </body>
-
 
 </html>
