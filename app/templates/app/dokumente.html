@@ -176,7 +176,7 @@
 									<label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Datei art auswählen</label>
 									<select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
 										<option selected>Datei art auswählen</option>
-										{%get_choices 'FilesCoices' as Files %}
+										{%get_choices 'FilesChoices' as Files %}
 										{% for item in Files %}
 										<option value="{{ item.0 }}">{{ item.1 }}</option>
 										{% endfor %}
