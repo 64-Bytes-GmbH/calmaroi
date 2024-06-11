@@ -11,7 +11,6 @@ npm install -D tailwindcss flowbite
 
 ```python
 #If necessary and CSS not loading properly, initiate tailwind CLI (important!: copy the content of tailwind.config.js first, delete it and then run the command)
-npx tailwindcss init
 ```
 
 ```python

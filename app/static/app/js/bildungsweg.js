@@ -71,7 +71,7 @@ $(document).ready(function () {
           $('#education-tbody').append(newRow);
 
           // Close the modal
-          $('[data-modal-hide="authentication-modal"]').click();
+          $('[data-modal-hide="bildung-modal"]').click();
 
           // Clear the form
           $('#education-form')[0].reset();
@@ -109,5 +109,5 @@ $(document).on('click', '.edit-education-button', function () {
   $('#edit-education-form input[name="start"]').val(startDate);
   $('#edit-education-form input[name="end"]').val(endDate);
 
-  $('[data-modal-toggle="authentication-modal"]').click();
+  $('[data-modal-toggle="bildung-modal"]').click();
 });

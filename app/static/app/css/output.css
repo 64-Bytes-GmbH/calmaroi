@@ -1336,10 +1336,6 @@ input:checked + .toggle-bg {
   top: 100%;
 }
 
-.left-20 {
-  left: 5rem;
-}
-
 .z-10 {
   z-index: 10;
 }
@@ -1358,18 +1354,6 @@ input:checked + .toggle-bg {
 
 .z-50 {
   z-index: 50;
-}
-
-.z-auto {
-  z-index: auto;
-}
-
-.z-0 {
-  z-index: 0;
-}
-
-.float-right {
-  float: right;
 }
 
 .m-7 {
@@ -1421,6 +1405,10 @@ input:checked + .toggle-bg {
 
 .mb-2 {
   margin-bottom: 0.5rem;
+}
+
+.mb-20 {
+  margin-bottom: 5rem;
 }
 
 .mb-3 {
@@ -1493,22 +1481,6 @@ input:checked + .toggle-bg {
 
 .mt-auto {
   margin-top: auto;
-}
-
-.mb-12 {
-  margin-bottom: 3rem;
-}
-
-.mb-auto {
-  margin-bottom: auto;
-}
-
-.mb-28 {
-  margin-bottom: 7rem;
-}
-
-.mb-20 {
-  margin-bottom: 5rem;
 }
 
 .box-border {
