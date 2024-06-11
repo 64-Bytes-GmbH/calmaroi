@@ -95,6 +95,29 @@ $(document).ready(function () {
   });
 });
 
+$(document).on('click', '.delete-education-button', function () {
+  const row = $(this).closest('tr');
+  const id = row.data('id');
+
+  if (confirm('Sind Sie sicher, dass Sie diesen Datensatz löschen möchten?')) {
+    $.ajax({
+      url: '/delete-education/',
+      type: 'POST',
+      data: { id },
+      success: function (data) {
+        if (data.status === 'success') {
+          row.remove();
+        } else {
+          alert('Es gab einen Fehler beim Löschen der Daten.');
+        }
+      },
+      error: function (error) {
+        console.error('Error:', error);
+      }
+    });
+  }
+});
+
 $(document).on('click', '.edit-education-button', function () {
   const row = $(this).closest('tr');
   const id = row.data('id');
