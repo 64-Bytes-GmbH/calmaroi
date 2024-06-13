@@ -4,7 +4,9 @@
     "tailwindcss": "^3.4.4"
   },
   "scripts": {
-    "build": "tailwindcss -i ./app/static/app/css/input.css -o ./app/static/app/css/output.css",
-    "watch": "tailwindcss -i ./app/static/app/css/input.css -o ./app/static/app/css/output.css --watch"
+    "build": "tailwindcss -i ./app/static/app/css/input.css -c tailwind.config.js -o ./app/static/app/css/output.css",
+    "watch": "tailwindcss -i ./app/static/app/css/input.css -c tailwind.config.js -o ./app/static/app/css/output.css --watch",
+    "build:dashboard": "tailwindcss -i ./app/static/dashboard/css/input.css -c tailwind.dashboard.js -o ./app/static/dashboard/css/output.css",
+    "watch:dashboard": "tailwindcss -i ./app/static/dashboard/css/input.css -c tailwind.dashboard.js -o ./app/static/dashboard/css/output.css --watch"
   }
 }
