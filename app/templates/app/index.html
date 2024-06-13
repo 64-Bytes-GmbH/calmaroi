@@ -2,20 +2,13 @@
 {% load static extra_tags %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'app/css/output.css' %}">
-
 {% endblock %}
-
 
 <!-- left side  -->
 {% block contentleft %}
 <!-- stepper -->
 <div class=" bg-white rounded-xl bg-opacity-30   h-auto w-auto my-5">
-
 	<div class="bg-g m-7">
-
-
-
 		<ol class="relative text-white border-s border-gray-200 dark:border-gray-700 dark:text-gray-400 space-y-16">
 
 			<li class="mb-10 ms-6 flex items-center">
@@ -45,7 +38,6 @@
 				</span>
 				<a href="{% url 'persoenlicheinfos' %}" class="font-medium leading-tight flex">Persönliche Infos</a>
 			</li>
-
 			<li class="mb-10 ms-6 flex items-center">
 				<span
 					class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
@@ -59,7 +51,6 @@
 				</span>
 				<a href="{% url 'bildungsweg' %}" class="font-medium leading-tight flex">Bildungsweg</a>
 			</li>
-
 			<li class="mb-10 ms-6 flex items-center">
 				<span
 					class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
@@ -70,7 +61,6 @@
 							d="M4 4a2 2 0 0 0-2 2v12a2 2 0 0 0 .087.586l2.977-7.937A1 1 0 0 1 6 10h12V9a2 2 0 0 0-2-2h-4.532l-1.9-2.28A2 2 0 0 0 8.032 4H4Zm2.693 8H6.5l-3 8H18l3-8H6.693Z"
 							clip-rule="evenodd" />
 					</svg>
-
 				</span>
 				<a href="{% url 'dokumente' %}" class="font-medium leading-tight flex">Dokumente</a>
 			</li>
@@ -95,7 +85,6 @@
 							d="M11.644 3.066a1 1 0 0 1 .712 0l7 2.666A1 1 0 0 1 20 6.68a17.694 17.694 0 0 1-2.023 7.98 17.406 17.406 0 0 1-5.402 6.158 1 1 0 0 1-1.15 0 17.405 17.405 0 0 1-5.403-6.157A17.695 17.695 0 0 1 4 6.68a1 1 0 0 1 .644-.949l7-2.666Zm4.014 7.187a1 1 0 0 0-1.316-1.506l-3.296 2.884-.839-.838a1 1 0 0 0-1.414 1.414l1.5 1.5a1 1 0 0 0 1.366.046l4-3.5Z"
 							clip-rule="evenodd" />
 					</svg>
-
 				</span>
 				<a href="#" class="font-medium leading-tight flex">Datenschutz</a>
 			</li>
@@ -107,8 +96,6 @@
 						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
 							d="M5 11.917 9.724 16.5 19 7.5" />
 					</svg>
-
-
 				</span>
 				<a href="#" class="font-medium leading-tight flex">Übersicht</a>
 			</li>
@@ -117,62 +104,65 @@
 </div>
 {% endblock %}
 
-
-
 <!-- right side -->
 {% block contentright %}
 
 <div class="">
 	<h6 class="font-extrabold text-2xl">Für welches Gebiet bewirbst du dich?</h6>
 </div>
-
 <div>
 	<div class=" mt-6 mb-3">
 		<h1>Ich bewerbe mich für folgenden Ausbildungszeitraum</h1>
 	</div>
 	<!-- accordion -->
 	<div>
-
 		<div id="accordion-arrow-icon" data-accordion="hidden">
-				<div
-					class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-white bg-primary-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-white dark:bg-gray-800  dark:hover:bg-gray-800 gap-3"
-					 aria-expanded="false">
-					<span>Ausbildung in der Krankenpflegehilfe</span>
-		</div>
-			
+			<div class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-white bg-primary-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-white dark:bg-gray-800  dark:hover:bg-gray-800 gap-3"
+				aria-expanded="false">
+				<span>Ausbildung in der Krankenpflegehilfe</span>
+			</div>
+
 			<!-- first text and date section -->
 			<div
 				class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-4  dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 ">
 				<div class="w-1/2">Campus</div>
-				
-				<div class="">	
+
+				<div class="">
 					<div class="relative max-w-sm">
 						<div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-						<svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-							<path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+							<svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+								xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+								<path
+									d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
 							</svg>
 						</div>
-						<input datepicker datepicker-autohide type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date">
+						<input datepicker datepicker-autohide type="text"
+							class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+							placeholder="Select date">
 					</div>
-				</div>	
+				</div>
 			</div>
 			<!-- end of first text and date section -->
-			
-			<!-- second text and date section -->	
+
+			<!-- second text and date section -->
 			<div
 				class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-4  dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 ">
 				<div class="w-1/2">Campus</div>
-				
-				<div class="">	
+
+				<div class="">
 					<div class="relative max-w-sm">
 						<div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-						<svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-							<path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+							<svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+								xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+								<path
+									d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
 							</svg>
 						</div>
-						<input datepicker datepicker-autohide type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date">
+						<input datepicker datepicker-autohide type="text"
+							class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+							placeholder="Select date">
 					</div>
-				</div>	
+				</div>
 			</div>
 			<!-- end of second text and date section -->
 
@@ -180,160 +170,188 @@
 			<div
 				class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-4  dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 ">
 				<div class="w-1/2">Campus</div>
-				
-				<div class="">	
+
+				<div class="">
 					<div class="relative max-w-sm">
 						<div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-						<svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-							<path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+							<svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+								xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+								<path
+									d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
 							</svg>
 						</div>
-						<input datepicker datepicker-autohide type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date">
+						<input datepicker datepicker-autohide type="text"
+							class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+							placeholder="Select date">
 					</div>
-				</div>	
+				</div>
 			</div>
 			<!-- end of third text and date section -->
 
+			<!-- accordions -->
+			<div id="accordion-arrow-icon-body-1" aria-labelledby="accordion-arrow-icon-heading-1">
 
-			
-		
-
-
-		<!-- accordions -->
-		<div id="accordion-arrow-icon-body-1" aria-labelledby="accordion-arrow-icon-heading-1">
-
-			<!-- first accordion -->
-			<h2 id="accordion-flush-heading-1">
-				<button type="button" 
-				class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-4  dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 " data-accordion-target="#accordion-flush-body-1" aria-expanded="false" aria-controls="accordion-flush-body-1">
-					<span>Ausbildung zum/zur medizinischen Technolog*in Radiologie</span>
-					<svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-					<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
-					</svg>
-				</button>
+				<!-- first accordion -->
+				<h2 id="accordion-flush-heading-1">
+					<button type="button"
+						class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-4  dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 "
+						data-accordion-target="#accordion-flush-body-1" aria-expanded="false"
+						aria-controls="accordion-flush-body-1">
+						<span>Ausbildung zum/zur medizinischen Technolog*in Radiologie</span>
+						<svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M9 5 5 1 1 5" />
+						</svg>
+					</button>
 				</h2>
 				<div id="accordion-flush-body-1" class="hidden" aria-labelledby="accordion-flush-heading-1">
-				<div class="py-5 border-b border-gray-200 dark:border-gray-700">
-					<p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and more.</p>
-					<p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a href="/docs/getting-started/introduction/" class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p>
-				</div>
+					<div class="py-5 border-b border-gray-200 dark:border-gray-700">
+						<p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is an open-source library of
+							interactive components built on top of Tailwind CSS including buttons, dropdowns, modals,
+							navbars, and more.</p>
+						<p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a
+								href="/docs/getting-started/introduction/"
+								class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start
+							developing websites even faster with components on top of Tailwind CSS.</p>
+					</div>
 				</div>
 			</div>
-
 
 			<!-- second accordion -->
 			<h2 id="accordion-flush-heading-2">
-				<button type="button" 
-				class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-4  dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 " data-accordion-target="#accordion-flush-body-2" aria-expanded="false" aria-controls="accordion-flush-body-2">
+				<button type="button"
+					class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-4  dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 "
+					data-accordion-target="#accordion-flush-body-2" aria-expanded="false"
+					aria-controls="accordion-flush-body-2">
 					<span>Ausbildung zur Anästhesietechnischen oder Operationstechnischen Assistenz </span>
-					<svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-					<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+					<svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+						xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							d="M9 5 5 1 1 5" />
 					</svg>
 				</button>
-				</h2>
-				<div id="accordion-flush-body-2" class="hidden" aria-labelledby="accordion-flush-heading-2">
+			</h2>
+			<div id="accordion-flush-body-2" class="hidden" aria-labelledby="accordion-flush-heading-2">
 				<div class="py-5 border-b border-gray-200 dark:border-gray-700">
-					<p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is first conceptualized and designed using the Figma software so everything you see in the library has a design equivalent in our Figma file.</p>
-					<p class="text-gray-500 dark:text-gray-400">Check out the <a href="https://flowbite.com/figma/" class="text-blue-600 dark:text-blue-500 hover:underline">Figma design system</a> based on the utility classes from Tailwind CSS and components from Flowbite.</p>
+					<p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is first conceptualized and designed using
+						the Figma software so everything you see in the library has a design equivalent in our Figma
+						file.</p>
+					<p class="text-gray-500 dark:text-gray-400">Check out the <a href="https://flowbite.com/figma/"
+							class="text-blue-600 dark:text-blue-500 hover:underline">Figma design system</a> based on
+						the utility classes from Tailwind CSS and components from Flowbite.</p>
 				</div>
-				</div>
-
-
-
-				
-			
-				<!-- third accordion -->
-				<h2 id="accordion-flush-heading-3">
-					<button type="button" 
-						class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-4  dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 " data-accordion-target="#accordion-flush-body-3" aria-expanded="false" aria-controls="accordion-flush-body-3">
-						<span>Ausbildung zum/zur medizinischen Technolog*in Radiologie</span>
-						<svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
-						</svg>
-					</button>
-					</h2>
-					<div id="accordion-flush-body-3" class="hidden" aria-labelledby="accordion-flush-heading-3">
-					<div class="py-5 border-b border-gray-200 dark:border-gray-700">
-						<p class="mb-2 text-gray-500 dark:text-gray-400">The main difference is that the core components from Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product. Another difference is that Flowbite relies on smaller and standalone components, whereas Tailwind UI offers sections of pages.</p>
-						<p class="mb-2 text-gray-500 dark:text-gray-400">However, we actually recommend using both Flowbite, Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you from using the best of two worlds.</p>
-						<p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
-						<ul class="ps-5 text-gray-500 list-disc dark:text-gray-400">
-						<li><a href="https://flowbite.com/pro/" class="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
-						<li><a href="https://tailwindui.com/" rel="nofollow" class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
-						</ul>
-					</div>
-				</div>
-
-				<!-- fourth accordion -->
-				<h2 id="accordion-flush-heading-4">
-					<button type="button" 
-						class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-4  dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 " data-accordion-target="#accordion-flush-body-4" aria-expanded="false" aria-controls="accordion-flush-body-4">
-						<span>Ausbildung zur Anästhesietechnischen oder Operationstechnischen Assistenz</span>
-						<svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
-						</svg>
-					</button>
-					</h2>
-					<div id="accordion-flush-body-4" class="hidden" aria-labelledby="accordion-flush-heading-4">
-					<div class="py-5 border-b border-gray-200 dark:border-gray-700">
-						<p class="mb-2 text-gray-500 dark:text-gray-400">The main difference is that the core components from Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product. Another difference is that Flowbite relies on smaller and standalone components, whereas Tailwind UI offers sections of pages.</p>
-						<p class="mb-2 text-gray-500 dark:text-gray-400">However, we actually recommend using both Flowbite, Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you from using the best of two worlds.</p>
-						<p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
-						<ul class="ps-5 text-gray-500 list-disc dark:text-gray-400">
-						<li><a href="https://flowbite.com/pro/" class="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
-						<li><a href="https://tailwindui.com/" rel="nofollow" class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
-						</ul>
-					</div>
-				</div>
-
-			</div>	
-
-				<!-- end of all accordions -->
-
-					
-			<!-- first selector section -->
-			<div class=" mt-6 mb-3">
-				<div class="mb-5 mt-10">Ich bewerbe mich für die Ausbildungsrichtung</div>	
-					<form class="w-1/2">
-						<!-- <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Ich bewerbe mich für die Ausbildungsrichtung</label> -->
-						<select id="Ausbildungsrichtung" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-						<option selected>Bitte auswählen</option>
-						{% get_choices 'TrainigChoices' as choices %}
-						{% for item in choices %}
-							<option value="{{ item.0 }}">{{ item.1 }}</option>
-						{% endfor %}
-						</select>
-					</form>
 			</div>
 
-			<!-- second selector section -->
-
-			<div class=" mt-6 mb-3">
-				<div class="mb-5 mt-10">Nur für MTR-Bewerbungen: Die praktischen Einsätze bitte am Campus</div>
-					<form class="w-1/2">
-						<!-- <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nur für MTR-Bewerbungen: Die praktischen Einsätze bitte am Campus</label> -->
-						<select id="Campus" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-							<option selected>Bitte auswählen</option>
-							{% get_choices 'CampusChoices' as choices %}
-							{% for item in choices %}
-								<option value="{{ item.0 }}">{{ item.1 }}</option>
-							{% endfor %}
-
-						</select>
-					</form>
+			<!-- third accordion -->
+			<h2 id="accordion-flush-heading-3">
+				<button type="button"
+					class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-4  dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 "
+					data-accordion-target="#accordion-flush-body-3" aria-expanded="false"
+					aria-controls="accordion-flush-body-3">
+					<span>Ausbildung zum/zur medizinischen Technolog*in Radiologie</span>
+					<svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+						xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							d="M9 5 5 1 1 5" />
+					</svg>
+				</button>
+			</h2>
+			<div id="accordion-flush-body-3" class="hidden" aria-labelledby="accordion-flush-heading-3">
+				<div class="py-5 border-b border-gray-200 dark:border-gray-700">
+					<p class="mb-2 text-gray-500 dark:text-gray-400">The main difference is that the core components
+						from Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product.
+						Another difference is that Flowbite relies on smaller and standalone components, whereas
+						Tailwind UI offers sections of pages.</p>
+					<p class="mb-2 text-gray-500 dark:text-gray-400">However, we actually recommend using both Flowbite,
+						Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you from using the
+						best of two worlds.</p>
+					<p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
+					<ul class="ps-5 text-gray-500 list-disc dark:text-gray-400">
+						<li><a href="https://flowbite.com/pro/"
+								class="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
+						<li><a href="https://tailwindui.com/" rel="nofollow"
+								class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
+					</ul>
+				</div>
 			</div>
-			<!-- end of all selectors -->
 
-			
+			<!-- fourth accordion -->
+			<h2 id="accordion-flush-heading-4">
+				<button type="button"
+					class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-4  dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 "
+					data-accordion-target="#accordion-flush-body-4" aria-expanded="false"
+					aria-controls="accordion-flush-body-4">
+					<span>Ausbildung zur Anästhesietechnischen oder Operationstechnischen Assistenz</span>
+					<svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+						xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							d="M9 5 5 1 1 5" />
+					</svg>
+				</button>
+			</h2>
+			<div id="accordion-flush-body-4" class="hidden" aria-labelledby="accordion-flush-heading-4">
+				<div class="py-5 border-b border-gray-200 dark:border-gray-700">
+					<p class="mb-2 text-gray-500 dark:text-gray-400">The main difference is that the core components
+						from Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product.
+						Another difference is that Flowbite relies on smaller and standalone components, whereas
+						Tailwind UI offers sections of pages.</p>
+					<p class="mb-2 text-gray-500 dark:text-gray-400">However, we actually recommend using both Flowbite,
+						Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you from using the
+						best of two worlds.</p>
+					<p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
+					<ul class="ps-5 text-gray-500 list-disc dark:text-gray-400">
+						<li><a href="https://flowbite.com/pro/"
+								class="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
+						<li><a href="https://tailwindui.com/" rel="nofollow"
+								class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
+					</ul>
+				</div>
+			</div>
+
 		</div>
 
+		<!-- first selector section -->
+		<div class=" mt-6 mb-3">
+			<div class="mb-5 mt-10">Ich bewerbe mich für die Ausbildungsrichtung</div>
+			<form class="w-1/2">
+				<!-- <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Ich bewerbe mich für die Ausbildungsrichtung</label> -->
+				<select id="Ausbildungsrichtung"
+					class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+					<option selected>Bitte auswählen</option>
+					{% get_choices 'TrainigChoices' as choices %}
+					{% for item in choices %}
+					<option value="{{ item.0 }}">{{ item.1 }}</option>
+					{% endfor %}
+				</select>
+			</form>
+		</div>
+
+		<!-- second selector section -->
+		<div class=" mt-6 mb-3">
+			<div class="mb-5 mt-10">Nur für MTR-Bewerbungen: Die praktischen Einsätze bitte am Campus</div>
+			<form class="w-1/2">
+				<!-- <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nur für MTR-Bewerbungen: Die praktischen Einsätze bitte am Campus</label> -->
+				<select id="Campus"
+					class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+					<option selected>Bitte auswählen</option>
+					{% get_choices 'CampusChoices' as choices %}
+					{% for item in choices %}
+					<option value="{{ item.0 }}">{{ item.1 }}</option>
+					{% endfor %}
+
+				</select>
+			</form>
+		</div>
+		<!-- end of all selectors -->
 	</div>
+</div>
 
 {% endblock %}
+
 
 {% block scripts %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>
-
 
 {% endblock %}

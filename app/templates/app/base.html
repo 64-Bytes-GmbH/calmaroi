@@ -1,5 +1,4 @@
-{% load compress %}
-{% load static %}
+{% load static compress %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,8 +6,12 @@
 <head>
 	<title>{% block title %}calmaroi{% endblock %}</title>
 	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flowbite@1.5.3/dist/flowbite.min.css" /> -->
-	<link rel="stylesheet" href="../../static/app/css/output.css" rel="stylesheet">
+	{% compress css %}
+	<link rel="stylesheet" href="{% static 'app/css/output.css' %}" rel="stylesheet">
+	{% endcompress %}
+
 	{% block css %}
+
 	{% endblock %}
 </head>
 
@@ -154,7 +157,7 @@
 				</svg>
 				<span>Zurück</span>
 			</button>
-	
+
 			<!-- submit button -->
 			<button type="submit"
 				class="text-white bg-primary-500 hover:bg-primary-300 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm pl-2.5 py-2.5 flex items-center space-x-2 ">
