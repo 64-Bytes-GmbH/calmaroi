@@ -1,0 +1,64 @@
+<aside
+    class="fixed top-0 right-0 z-40 w-72 h-screen pt-14 transition-transform translate-x-full bg-gray-300 md:-translate-x-0"
+    aria-label="Profilebar" id="user-drawer" aria-hidden="true">
+    <div class="overflow-y-auto py-5 px-3 h-full flex flex-col gap-y-4">
+        <div>
+            <h5 class="font-bold text-gray-900 mb-3">Allgemein</h5>
+            <ul class="space-y-1">
+                <li>
+                    <a href="{% url 'application_documents' user_id=user_id %}" class="{% if request.resolver_match.url_name == 'application_documents' %}active{% else %}inactive{% endif %} flex items-center p-3 text-base font-semibold text-gray-900 rounded-lg">
+                        Unterlagen
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'application_timeline' user_id=user_id %}" class="{% if request.resolver_match.url_name == 'application_timeline' %}active{% else %}inactive{% endif %} flex items-center p-3 text-base font-semibold text-gray-900 rounded-lg">
+                        Zeitplan
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'application_living_space' user_id=user_id %}" class="{% if request.resolver_match.url_name == 'application_living_space' %}active{% else %}inactive{% endif %} flex items-center p-3 text-base font-semibold text-gray-900 rounded-lg">
+                        Wohnraum
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'application_assisstance' user_id=user_id %}" class="{% if request.resolver_match.url_name == 'application_assisstance' %}active{% else %}inactive{% endif %} flex items-center p-3 text-base font-semibold text-gray-900 rounded-lg">
+                        Betreuung
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h5 class="font-bold text-gray-900 mb-3">Bewertung</h5>
+            <ul class="space-y-1">
+                <li>
+                    <a class="bg-gradient-to-r fill-30% from-[#00942075] to-[#89898944] text-green-700 flex items-center gap-2.5 p-3 text-base font-semibold rounded-lg">
+                        <svg class="w-1.5 h-8" viewBox="0 0 5 30" xmlns="http://www.w3.org/2000/svg">
+                            <rect y="0.5" width="5" height="30" fill="currentColor"/>
+                        </svg>
+                        <span class="text-gray-900">Allgemein</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h5 class="font-bold text-gray-900 mb-3">Weiteres</h5>
+            <ul class="space-y-1">
+                <li>
+                    <a href="{% url 'application_contact_person' user_id=user_id %}" class="{% if request.resolver_match.url_name == 'application_contact_person' %}active{% else %}inactive{% endif %} flex items-center p-3 text-base font-semibold text-gray-900 rounded-lg">
+                        Ansprechpartner
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'application_internal_communication' user_id=user_id %}" class="{% if request.resolver_match.url_name == 'application_internal_communication' %}active{% else %}inactive{% endif %} flex items-center p-3 text-base font-semibold text-gray-900 rounded-lg">
+                        Interne Kommunikation
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'application_notes' user_id=user_id %}" class="{% if request.resolver_match.url_name == 'application_notes' %}active{% else %}inactive{% endif %} flex items-center p-3 text-base font-semibold text-gray-900 rounded-lg">
+                        Notizen
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</aside>

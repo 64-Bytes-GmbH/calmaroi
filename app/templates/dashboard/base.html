@@ -231,8 +231,8 @@
         </nav>
         {% endblock %}
 
-        <!-- Sidebar -->
-        {% block sidebar %}
+        <!-- Left sidebar -->
+        {% block left_sidebar %}
         <aside class="fixed top-0 left-0 z-40 w-64 h-screen pt-14 transition-transform -translate-x-full bg-gray-300 md:translate-x-0"
             aria-label="Sidenav" id="drawer-navigation">
         
@@ -270,7 +270,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{% url 'all_applications' %}" class="{% if request.resolver_match.url_name == 'all_applications' %}active{% endif %} flex items-center p-2 text-base font-medium text-gray-900 rounded-lg hover:bg-gray-100 group">
+                        <a href="{% url 'all_applications' %}" class="{% if request.resolver_match.url_name == 'all_applications' or user_id %}active{% endif %} flex items-center p-2 text-base font-medium text-gray-900 rounded-lg hover:bg-gray-100 group">
                             <svg class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900"
                                 fill="currentColor" viewBox="0 0 18 20" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5.83673 5.0975V0.132535C5.33926 0.270146 4.88541 0.533058 4.51855 0.89614L1.63549 3.77929C1.27314 4.14671 1.01035 4.60037 0.871905 5.0975H5.83673Z" fill="currentColor"/>
@@ -406,11 +406,15 @@
         </aside>
         {% endblock %}
 
-        <!-- main content -->
+        <!-- Main content -->
         {% block content %}
         {% endblock %}
 
-        <!-- footer -->
+        <!-- Right sidebar -->
+        {% block right_sidebar %}
+        {% endblock %}
+
+        <!-- Footer -->
         {% block footer %}
         {% endblock %}
 
