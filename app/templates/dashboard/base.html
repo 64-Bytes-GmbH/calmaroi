@@ -40,7 +40,7 @@
                     <!-- Sidebar toggler -->
                     <button data-drawer-target="drawer-navigation" data-drawer-toggle="drawer-navigation"
                         aria-controls="drawer-navigation"
-                        class="p-2 mr-2 text-gray-400 rounded-lg cursor-pointer md:hidden hover:text-gray-900 hover:bg-gray-100 focus:bg-gray-100 focus:ring-2 focus:ring-gray-100">
+                        class="p-2 mr-2 text-gray-400 rounded-lg cursor-pointer 2xl:hidden hover:text-gray-900 hover:bg-gray-100 focus:bg-gray-100 focus:ring-2 focus:ring-gray-100">
                         <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 21"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -56,9 +56,9 @@
                     </a>
         
                     <!-- Search field/form -->
-                    <form action="#" method="GET" class="hidden md:block md:pl-2">
+                    <form action="#" method="GET" class="hidden 2xl:block 2xl:pl-2">
                         <label for="topbar-search" class="sr-only">Suchen</label>
-                        <div class="relative md:w-64 lg:w-72">
+                        <div class="relative 2xl:w-64 lg:w-72">
                             <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                                 <svg class="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 17 17"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -194,7 +194,7 @@
         
                     <!-- User -->
                     <button type="button"
-                        class="w-8 h-8 flex mx-3 text-sm bg-gray-200 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300"
+                        class="w-8 h-8 flex mx-3 text-sm bg-gray-200 rounded-full 2xl:mr-0 focus:ring-4 focus:ring-gray-300"
                         id="user-menu-button" aria-expanded="false" data-dropdown-toggle="dropdown">
                         <span class="sr-only">Menü öffnen</span>
                         <img class="rounded-full" src="" alt="" />
@@ -233,14 +233,14 @@
 
         <!-- Left sidebar -->
         {% block left_sidebar %}
-        <aside class="fixed top-0 left-0 z-40 w-64 h-screen pt-14 transition-transform -translate-x-full bg-gray-300 md:translate-x-0"
+        <aside class="fixed top-0 left-0 z-40 w-64 h-screen pt-14 transition-transform -translate-x-full bg-gray-300 2xl:translate-x-0"
             aria-label="Sidenav" id="drawer-navigation">
         
             <!-- Outer sidebar content container -->
             <div class="overflow-y-auto py-5 px-3 h-full">
         
                 <!-- Search field/form -->
-                <form action="#" method="GET" class="md:hidden mb-2">
+                <form action="#" method="GET" class="2xl:hidden mb-2">
                     <label for="sidebar-search" class="sr-only">Suchen</label>
                     <div class="relative">
                         <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
@@ -318,7 +318,7 @@
                             <span class="flex-1 ml-3 whitespace-nowrap">Benachrichtigungen</span>
                             <span
                                 class="inline-flex justify-center items-center w-5 h-5 text-xs font-semibold rounded-full text-primary-800 bg-primary-100">
-                                4
+                                
                             </span>
                         </a>
                     </li>
