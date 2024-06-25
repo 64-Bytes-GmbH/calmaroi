@@ -35,27 +35,30 @@ a.inactive:hover {
     @apply bg-gray-100;
 }
 
-a.red-statistics > svg {
+.red-statistics > svg {
     @apply text-calmaroi-red;
 }
 
-a.orange-statistics > svg {
+.orange-statistics > svg {
     @apply text-calmaroi-orange;
 }
 
-a.green-statistics > svg {
+.green-statistics > svg {
     @apply text-calmaroi-green;
 }
 
-a.red-statistics.inactive {
+.red-statistics.inactive,
+.bg-red-statistics {
     @apply bg-red-gradient;
 }
 
-a.orange-statistics.inactive {
+.orange-statistics.inactive,
+.bg-orange-statistics {
     @apply bg-orange-gradient;
 }
 
-a.green-statistics.inactive {
+.green-statistics.inactive,
+.bg-green-statistics {
     @apply bg-green-gradient;
 }
 

@@ -1,6 +1,6 @@
 {% extends "dashboard/base.html" %}
 
-{% load static %} 
+{% load static %}
 
 {% block title %} Bewertung | Berufl. Vorerfahrungen {% endblock %}
 
@@ -20,7 +20,7 @@
                     <!-- accordion header -->
                     <div class="flex items-center gap-2 p-5 justify-between flex-wrap flex-1">
                         <h5 class="font-medium text-[17px]">
-                            Bewertung  |  Berufl. Vorerfahrungen 
+                            Bewertung | Berufl. Vorerfahrungen
                         </h5>
                         <div class="flex items-stretch gap-2 ml-auto">
                             <button class="px-2" data-accordion-target="#accordion-career-evaluation"
@@ -35,18 +35,169 @@
                     </div>
                     <!-- accordion body -->
                     <div class="" id="accordion-career-evaluation">
-                        <div class="flex flex-col gap-2 px-5 pb-5">
-                            <h1>Placeholder</h1>
+                        <div class="flex flex-col gap-7 px-5 pb-5">
+                            <!-- question experience 1 -->
+                            <div class="flex flex-col gap-2.5">
+                                <h5 class="font-medium text-sm">
+                                    Hat der Bewerber bereits Praktika oder freiwillige Einsätze im Pflegebereich absolviert?
+                                </h5>
+                                <div class="flex gap-2 items-center flex-wrap">
+                                    <div class="flex items-center w-28 max-w-full">
+                                        <input id="experience-1-yes" type="radio" value="yes" name="experience-1" class="hidden peer">
+                                        <label for="experience-1-yes"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white">Ja</label>
+                                    </div>
+                                    <div class="flex items-center w-28 max-w-full">
+                                        <input checked id="experience-1-no" type="radio" value="no" name="experience-1" class="hidden peer">
+                                        <label for="experience-1-no"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white">Nein</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- question experience 2 -->
+                            <div class="flex flex-col gap-2.5">
+                                <h5 class="font-medium text-sm">
+                                    Kann der Bewerber Erfahrungen vorweisen, in denen er Mitgefühl, Empathie und eine starke ethische Grundhaltung im Umgang mit Patienten oder Klienten gezeigt hat?
+                                </h5>
+                                <div class="flex gap-2 items-center flex-wrap">
+                                    <div class="flex items-center w-28 max-w-full">
+                                        <input id="experience-2-yes" type="radio" value="yes" name="experience-2" class="hidden peer">
+                                        <label for="experience-2-yes"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white">Ja</label>
+                                    </div>
+                                    <div class="flex items-center w-28 max-w-full">
+                                        <input checked id="experience-2-no" type="radio" value="no" name="experience-2" class="hidden peer">
+                                        <label for="experience-2-no"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white">Nein</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- question experience 3 -->
+                            <div class="flex flex-col gap-2.5">
+                                <h5 class="font-medium text-sm">
+                                    Wie schätzen Sie die Vorkenntnisse im Bereich der medizinischen Terminologie ein?
+                                </h5>
+                                <div class="flex gap-2 items-center flex-wrap">
+                                    <div class="flex items-center w-28 max-w-full">
+                                        <input id="experience-3-1" type="radio" value="1" name="experience-3" class="hidden peer">
+                                        <label for="experience-3-1"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white">Schlecht</label>
+                                    </div>
+                                    <div class="flex items-center w-28 max-w-full">
+                                        <input checked id="experience-3-2" type="radio" value="2" name="experience-3" class="hidden peer">
+                                        <label for="experience-3-2"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white">2</label>
+                                    </div>
+                                    <div class="flex items-center w-28 max-w-full">
+                                        <input id="experience-3-3" type="radio" value="3" name="experience-3" class="hidden peer">
+                                        <label for="experience-3-3"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white">3</label>
+                                    </div>
+                                    <div class="flex items-center w-28 max-w-full">
+                                        <input checked id="experience-3-4" type="radio" value="4" name="experience-3" class="hidden peer">
+                                        <label for="experience-3-4"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white">4</label>
+                                    </div>
+                                    <div class="flex items-center w-28 max-w-full">
+                                        <input id="experience-3-5" type="radio" value="5" name="experience-3" class="hidden peer">
+                                        <label for="experience-3-5"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white">Sehr gut</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- question experience 4 -->
+                            <div class="flex flex-col gap-2.5">
+                                <h5 class="font-medium text-sm">
+                                    Ist der Bewerber bereits in Erster Hilfe oder in lebensrettenden Maßnahmen geschult worden?
+                                </h5>
+                                <div class="flex gap-2 items-center flex-wrap">
+                                    <div class="flex items-center w-28 max-w-full">
+                                        <input id="experience-4-yes" type="radio" value="yes" name="experience-4" class="hidden peer">
+                                        <label for="experience-4-yes"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white">Ja</label>
+                                    </div>
+                                    <div class="flex items-center w-28 max-w-full">
+                                        <input checked id="experience-4-no" type="radio" value="no" name="experience-4" class="hidden peer">
+                                        <label for="experience-4-no"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white">Nein</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- question experience 5 -->
+                            <div class="flex flex-col gap-2.5">
+                                <h5 class="font-medium text-sm">
+                                    Hat der Bewerber Erfahrung im Umgang mit Pflegedokumentationssoftware?
+                                </h5>
+                                <div class="flex gap-2 items-center flex-wrap">
+                                    <div class="flex items-center w-28 max-w-full">
+                                        <input id="experience-5-yes" type="radio" value="yes" name="experience-5" class="hidden peer">
+                                        <label for="experience-5-yes"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white">Ja</label>
+                                    </div>
+                                    <div class="flex items-center w-28 max-w-full">
+                                        <input checked id="experience-5-no" type="radio" value="no" name="experience-5" class="hidden peer">
+                                        <label for="experience-5-no"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white">Nein</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <!-- question experience overall -->
+                            <div class="flex flex-col gap-2.5">
+                                <h5 class="font-medium text-sm">
+                                    Wie schätzen Sie die Gesamtbewertung in Bezug auf die berufl. Erfahrungen des Bewerbers?
+                                </h5>
+                                <div class="flex gap-2 items-center flex-wrap">
+                                    <div class="flex items-center w-28 max-w-full">
+                                        <input id="experience-overall-1" type="radio" value="yes" name="experience-overall" class="hidden peer">
+                                        <label for="experience-overall-1"
+                                            class="flex items-center gap-2 w-full p-2 text-center text-sm font-medium bg-red-statistics red-statistics rounded-lg border-2 peer-checked:border-calmaroi-red">
+                                            <svg class="w-1 h-6" viewBox="0 0 5 30" xmlns="http://www.w3.org/2000/svg">
+                                                <rect y="0.5" width="5" height="30" fill="currentColor" />
+                                            </svg>
+                                            Schlecht
+                                        </label>
+                                    </div>
+                                    <div class="flex items-center w-28 max-w-full">
+                                        <input checked id="experience-overall-2" type="radio" value="no" name="experience-overall" class="hidden peer">
+                                        <label for="experience-overall-2"
+                                            class="flex items-center gap-2 w-full p-2 text-center text-sm font-medium bg-orange-statistics orange-statistics rounded-lg border-2 peer-checked:border-calmaroi-orange">
+                                            <svg class="w-1 h-6" viewBox="0 0 5 30" xmlns="http://www.w3.org/2000/svg">
+                                                <rect y="0.5" width="5" height="30" fill="currentColor" />
+                                            </svg>
+                                            Mittel
+                                        </label>
+                                    </div>
+                                    <div class="flex items-center w-28 max-w-full">
+                                        <input checked id="experience-overall-3" type="radio" value="no" name="experience-overall" class="hidden peer">
+                                        <label for="experience-overall-3"
+                                            class="flex items-center gap-2 w-full p-2 text-center text-sm font-medium bg-green-statistics green-statistics rounded-lg border-2 peer-checked:border-calmaroi-green">
+                                            <svg class="w-1 h-6" viewBox="0 0 5 30" xmlns="http://www.w3.org/2000/svg">
+                                                <rect y="0.5" width="5" height="30" fill="currentColor" />
+                                            </svg>
+                                            Gut
+                                        </label>
+                                    </div>
+                                </div>
+                                <h5 class="text-gray-500 text-sm font-medium mt-2">
+                                    Basierend auf bisherige Ergebnisse, wird die Bewertung durch die KI mit <span class="font-semibold text-calmaroi-green">GUT</span> empfohlen.
+                                </h5>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
 </main>
 
-{% endblock %} 
+{% endblock %}
 
 {% block right_sidebar %}
     {% include 'dashboard/application/common/side_navigation.html' %}
