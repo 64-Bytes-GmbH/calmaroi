@@ -58,3 +58,23 @@ a.orange-statistics.inactive {
 a.green-statistics.inactive {
     @apply bg-green-gradient;
 }
+
+.document {
+    @apply flex items-center justify-between px-[15px] py-[11px] rounded-lg text-gray-500;
+}
+
+.document svg.check {
+    @apply hidden;
+}
+
+.document.unchecked {
+    @apply border-gray-200 border;
+}
+
+.document.checked {
+    @apply border-calmaroi-green border-2;
+}
+
+.document.checked svg.check {
+    @apply block;
+}
