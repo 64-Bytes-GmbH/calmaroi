@@ -1,14 +1,19 @@
-{% load compress %}
-{% load static %}
+{% load static compress %}
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 	<title>{% block title %}calmaroi{% endblock %}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flowbite@1.5.3/dist/flowbite.min.css" /> -->
-	<link rel="stylesheet" href="../../static/app/css/output.css" rel="stylesheet">
+	{% compress css %}
+	<link rel="stylesheet" href="{% static 'app/css/output.css' %}" rel="stylesheet">
+	{% endcompress %}
+
 	{% block css %}
+
 	{% endblock %}
 </head>
 
@@ -16,7 +21,7 @@
 	<!-- Navbar -->
 	<nav class="bg-white border-gray-200 dark:bg-gray-900">
 		<div class="shadow-lg w-full">
-			<div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 ">
+			<div class="max-w-screen-xl flex flex-wrap items-center justify-between m-auto p-4 ">
 
 				<div>
 					<a href="https://www.uksh.de/akademie/" class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -24,11 +29,8 @@
 					</a>
 
 				</div>
-
-
-				<div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse gap-x-6  ">
-
-
+				<!-- desktop menu -->
+				<div class="md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse gap-x-6 flex ">
 					<!-- sprache auswälen -->
 					<div>
 						<button type="button" data-dropdown-toggle="language-dropdown-menu"
@@ -46,7 +48,6 @@
 									stroke-width="2" d="m1 1 4 4 4-4" />
 							</svg>
 						</button>
-
 						<!-- Dropdown -->
 						<div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700"
 							id="language-dropdown-menu">
@@ -98,42 +99,61 @@
 							</ul>
 						</div>
 					</div>
-
-
 					<!-- einloggen -->
-					<div>
+					<div class="md:block hidden">
 						<button type="button" id="Einloggen"
 							class="text-black border border-gray-950 bg-white hover:bg-gray-100  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center ">Einloggen</button>
 					</div>
-
 					<!-- registerieren -->
-					<div class=" ">
+					<div class="md:block hidden">
 						<button type="button" id="Registerieren"
 							class="text-white bg-blue-900 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center  ">Registerieren</button>
 					</div>
-
 				</div>
+				<!-- mobile menu -->
+				<div class="md:hidden">
+					<button id="dropdownMenunav" data-dropdown-toggle="dropdownDotsnav" class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button"> 
+						<svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 3">
+						  <path d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"/>
+						</svg>
+					  </button>
+					  
+					  <!-- Dropdown menu -->
+					  <div id="dropdownDotsnav" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-auto dark:bg-gray-700 dark:divide-gray-600">							
+							<div class="p-2 w-auto h-1/2">
+								<!-- registerieren -->
+								<button type="button" id="Registerieren"
+								class="text-white px-4 py-2 w-full h-auto bg-blue-900 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm text-center  ">Registerieren</button>										
+							</div>
+							<div class="p-2 w-auto h-1/2">
+								<!-- einloggen -->
+									<button type="button" id="Einloggen"
+									class="text-black px-4 py-2 w-full h-auto border border-gray-950 bg-white hover:bg-gray-100  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm text-center ">Einloggen</button>
+							</div>
+					  </div>
+				</div>
+
 			</div>
 		</div>
 	</nav>
 
 	<!-- container -->
-	<div class="max-w-screen-xl flex mx-auto mt-8 min-w-[80rem] rounded-l-2xl shadow-xl h-max overflow-auto ">
+	<div class=" flex flex-col-reverse  max-w-screen-xl md:flex-row mx-auto mt-8 md:2xl md:min-w-[80rem] rounded-l-2xl shadow-xl h-max overflow-auto ">
 
 		<!-- left -->
-		<div class=" flex flex-col bg-primary-500 rounded-l-2xl box-border w-1/4 p-12">
+		<div class=" flex flex-col bg-primary-500 md:rounded-l-2xl box-border md:w-1/4 md:p-12 m-5 px-2 py-1 rounded-2xl ">
 
 			<!-- title -->
-			<div class="  my-5">
-				<h1 class="text-white text-2xl">Onlinebewerbung</h1>
-			</div>
+			
+				<h1 class=" hidden md:contents text-white text-sm text-center md:text-2xl">Onlinebewerbung</h1>
+			
 
 			{% block contentleft %}
 			{% endblock %}
 		</div>
 
 		<!-- right -->
-		<div class="  bg-white rounded-r-2xl w-3/4  h-full p-12">
+		<div class=" bg-white rounded-r-2xl md:w-3/4 md:p-12 p-5 w-auto">
 			{% block contentright %}
 			{% endblock %}
 		</div>
@@ -154,7 +174,7 @@
 				</svg>
 				<span>Zurück</span>
 			</button>
-	
+
 			<!-- submit button -->
 			<button type="submit"
 				class="text-white bg-primary-500 hover:bg-primary-300 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm pl-2.5 py-2.5 flex items-center space-x-2 ">

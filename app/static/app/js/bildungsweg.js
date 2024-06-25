@@ -53,13 +53,23 @@ $(document).ready(function () {
                   </svg>
                 </button>
                 <!-- Dropdown menu -->
-                <div id="dropdown-${rowIndex}" class="hidden absolute z-20 top-full right-0 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                <div id="dropdown-${rowIndex}" class="hidden absolute z-20 top-full right-0 bg-white divide-y divide-gray-100 rounded-lg shadow w-auto dark:bg-gray-700 dark:divide-gray-600">
                   <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenu-">
                     <li>
-                      <div class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</div>
+                      <button class="edit-education-button px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white flex items-center w-full">
+                        <svg class="w-5 h-5 text-gray-800 dark:text-white mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.779 17.779 4.36 19.918 6.5 13.5m4.279 4.279 8.364-8.643a3.027 3.027 0 0 0-2.14-5.165 3.03 3.03 0 0 0-2.14.886L6.5 13.5m4.279 4.279L6.499 13.5m2.14 2.14 6.213-6.504M12.75 7.04 17 11.28"/>
+                        </svg>
+                        Edit
+                      </button>
                     </li>
                     <li>
-                       <div class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Delete</div> 
+                      <button class="delete-education-button px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white flex items-center w-full">
+                        <svg class="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                          <path fill-rule="evenodd" d="M8.586 2.586A2 2 0 0 1 10 2h4a2 2 0 0 1 2 2v2h3a1 1 0 1 1 0 2v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a1 1 0 0 1 0-2h3V4a2 2 0 0 1 .586-1.414ZM10 6h4V4h-4v2Zm1 4a1 1 0 1 0-2 0v8a1 1 0 1 0 2 0v-8Zm4 0a1 1 0 1 0-2 0v8a1 1 0 1 0 2 0v-8Z" clip-rule="evenodd"/>
+                        </svg>
+                        Delete
+                      </button> 
                     </li>
                   </ul>
                 </div>
@@ -87,50 +97,68 @@ $(document).ready(function () {
 
   // Attach event handler using event delegation for dynamically added dropdown buttons
   $(document).on('click', '[data-dropdown-toggle]', function() {
+    // Close any open dropdowns
+    $('[id^="dropdown-"]').hide();
+
     // Get the ID of the dropdown menu
     const dropdownId = $(this).attr('data-dropdown-toggle');
 
     // Toggle the visibility of the dropdown menu
     $('#' + dropdownId).toggle();
   });
-});
 
-$(document).on('click', '.delete-education-button', function () {
-  const row = $(this).closest('tr');
-  const id = row.data('id');
+  $(document).on('click', '.delete-education-button', function () {
+    const row = $(this).closest('tr');
+    const id = row.data('id');
 
-  if (confirm('Sind Sie sicher, dass Sie diesen Datensatz löschen möchten?')) {
-    $.ajax({
-      url: '/delete-education/',
-      type: 'POST',
-      data: { id },
-      success: function (data) {
-        if (data.status === 'success') {
-          row.remove();
-        } else {
-          alert('Es gab einen Fehler beim Löschen der Daten.');
-        }
-      },
-      error: function (error) {
-        console.error('Error:', error);
-      }
-    });
-  }
-});
+    //Aviii lösche das denn auch  
+    row.remove();
 
-$(document).on('click', '.edit-education-button', function () {
-  const row = $(this).closest('tr');
-  const id = row.data('id');
-  const abschluss = row.find('td:eq(0)').text();
-  const institution = row.find('td:eq(1)').text();
-  const startDate = row.find('td:eq(2)').text().split(' - ')[0];
-  const endDate = row.find('td:eq(2)').text().split(' - ')[1];
 
-  $('#edit-education-form input[name="id"]').val(id);
-  $('#edit-education-form input[name="abschluss"]').val(abschluss);
-  $('#edit-education-form input[name="institution"]').val(institution);
-  $('#edit-education-form input[name="start"]').val(startDate);
-  $('#edit-education-form input[name="end"]').val(endDate);
+    //Aviiiii remove the comment below and the closing bracket to enable delete functionality after implementing the database 
+    // if (confirm('Sind Sie sicher, dass Sie diesen Datensatz löschen möchten?')) {
+    //   $.ajax({
+    //     url: '/delete-education/',
+    //     type: 'POST',
+    //     data: { id: id },
+    //     success: function (data) {
+    //       row.remove();
+    //     },
+    //     error: function (error) {
+    //       console.error('Error:', error);
+    //     }
+    //   });
+    // }
+  });
 
-  $('[data-modal-toggle="bildung-modal"]').click();
+  $(document).on('click', '.edit-education-button', function () {
+    const row = $(this).closest('tr');
+    const id = row.data('id');
+    const abschluss = row.find('td:eq(0)').text();
+    const institution = row.find('td:eq(1)').text();
+    const dates = row.find('td:eq(2)').text().split(' - ');
+    const startDate = dates[0];
+    const endDate = dates[1];
+
+    
+
+    // Fill the form with the data from the row
+    $('#education-form input[name="id"]').val(id);
+    $('#education-form select[name="abschluss"]').val(abschluss);
+    $('#education-form input[name="institution"]').val(institution);
+    $('#education-form input[name="start"]').val(startDate);
+    $('#education-form input[name="end"]').val(endDate);
+
+    // Show the modal
+    $('[data-modal-toggle="bildung-modal"]').click();
+    //delete the row 
+    $('.delete-education-button').trigger('click');
+  });
+
+  // Hide dropdowns when clicking outside
+  $(document).on('click', function (event) {
+    if (!$(event.target).closest('[data-dropdown-toggle]').length && !$(event.target).closest('[id^="dropdown-"]').length) {
+      $('[id^="dropdown-"]').hide();
+    }
+  });
 });

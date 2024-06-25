@@ -1,27 +1,32 @@
-
 // jQuery ready function to ensure the DOM is fully loaded
 $(document).ready(function () {
     let file; // Declare the file variable
     let xhr; // Declare the xhr variable
 
-     // Initialize the Flowbite modal
-     const $targetEl = document.getElementById('uploadExtra-modal');
-     const modalOptions = {
-         placement: 'center',
-         backdrop: 'dynamic',
-         backdropClasses: 'bg-gray-900/50 dark:bg-gray-900/80 fixed inset-0 z-40',
-         closable: true,
-         onHide: () => {
-             console.log('modal is hidden');
-         },
-         onShow: () => {
-             console.log('modal is shown');
-         },
-         onToggle: () => {
-             console.log('modal has been toggled');
-         },
-     };
-     const modal = new Modal($targetEl, modalOptions);
+    // Initialize the Flowbite modal
+    const $targetEl = document.getElementById('uploadExtra-modal');
+    const modalOptions = {
+        placement: 'center',
+        backdrop: 'dynamic',
+        backdropClasses: 'bg-gray-900/50 dark:bg-gray-900/80 fixed inset-0 z-40',
+        closable: true,
+        onHide: () => {
+            console.log('modal is hidden');
+        },
+        onShow: () => {
+            console.log('modal is shown');
+        },
+        onToggle: () => {
+            console.log('modal has been toggled');
+        },
+    };
+    const modal = new Modal($targetEl, modalOptions);
+
+    function hideModal() {
+        $('#education-form')[0].reset();
+        modal.hide();
+        $('div[modal-backdrop]').hide();
+    }
 
     // Listen for file input change to update the file variable
     $('#file_to_upload').on('change', function (event) {
@@ -52,7 +57,8 @@ $(document).ready(function () {
                 <div>
                     <span class="text-base font-medium text-blue-700 dark:text-white">${filename}</span>
                     <span class="text-sm text-gray-500 dark:text-gray-400 block">${filesize}</span>
-                </div>                <div class="flex items-center">
+                </div>                
+                <div class="flex items-center">
                     <span class="percentage-text text-sm font-medium text-blue-700 dark:text-white mr-2">0%</span>
                     <button class="cancel-upload bg-transparent border-none cursor-pointer">
                         <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
@@ -82,9 +88,7 @@ $(document).ready(function () {
         $('#progress-container').append(progressContainer);
 
         // hide modal and show progress bar
-        $('#education-form')[0].reset();
-        modal.hide();
-        $('div[modal-backdrop]').hide();
+        hideModal();
        
         // Close the modal
         $('[data-modal-hide="bildung-modal"]').click();
@@ -135,14 +139,8 @@ $(document).ready(function () {
                     // Calculate the index for the new row
                     const rowIndex = $('#education-tbody tr').length;
 
-                    // Create a new table row
-                    const newRow = $(`
-                        <p>${description}</p>
-                    `);
 
-                    // Append the new row to the table body
-                    $('#education-tbody').append(newRow);
-
+            
                     // Close the modal
                     $('[data-modal-hide="bildung-modal"]').click();
 
@@ -164,12 +162,12 @@ $(document).ready(function () {
         });
     });
 
-    // Attach event handler using event delegation for dynamically added dropdown buttons
-    $(document).on('click', '[data-dropdown-toggle]', function() {
-        // Get the ID of the dropdown menu
-        const dropdownId = $(this).attr('data-dropdown-toggle');
+   
 
-        // Toggle the visibility of the dropdown menu
-        $('#' + dropdownId).toggle();
+    // Hide dropdowns when clicking outside
+    $(document).on('click', function (event) {
+        if (!$(event.target).closest('[data-dropdown-toggle]').length && !$(event.target).closest('[id^="dropdown-"]').length) {
+            $('[id^="dropdown-"]').hide();
+        }
     });
 });
