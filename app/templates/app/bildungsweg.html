@@ -8,91 +8,208 @@
 
 {% block contentleft %}
 <!-- stepper -->
-<div class=" bg-white rounded-xl bg-transparent bg-opacity-30 h-auto w-auto my-5">
-	<div class="bg-g m-7 ">
-		<ol class="relative text-white border-s border-grey-200 dark:border-gray-700 dark:text-gray-400 space-y-16">
-			<li class="mb-10 ms-6 flex items-center">
-				<span
-					class="absolute flex items-center justify-center w-8 h-8 bg-primary-500 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
-					<svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true"
-						xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-							d="M5 11.917 9.724 16.5 19 7.5" />
-					</svg>
-				</span>
-				<a href="{% url 'home' %}" class="font-medium leading-tight">Ausbildungsrichtung</a>
+<div class=" bg-white rounded-xl bg-opacity-30 md:my-5 m-auto ">
+	<!-- md stepper -->
+	<div class="bg-g m-7 hidden md:block">
+		<ol class="relative text-white border-s border-gray-200 space-y-16 ">
+			<li class="md:mb-10 md:ms-6 m-auto py-5 flex items-center">
+				<a href="{% url 'home' %}" class="font-medium leading-tight flex items-center">
+					<span
+						class="absolute flex items-center justify-center w-8 h-8 bg-primary-500 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
+						<svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M5 11.917 9.724 16.5 19 7.5" />
+						</svg>
+					</span>
+					<p class="hidden md:flex">Ausbildungsrichtung</p>
+				</a>
 			</li>
-			<li class="mb-10 ms-6 flex items-center">
-				<span
-					class="absolute flex items-center justify-center w-8 h-8 bg-primary-500 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
-					<svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true"
-						xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-							d="M5 11.917 9.724 16.5 19 7.5" />
-					</svg>
-				</span>
-				<a href="{% url 'persoenlicheinfos' %}" class="font-medium leading-tight flex">Persönliche Infos</a>
+			<li class="md:mb-10 md:ms-6 m-auto py-5 flex items-center">
+				<a href="{% url 'persoenlicheinfos' %}" class="font-medium leading-tight flex items-center">
+					<span
+						class="absolute flex items-center justify-center w-8 h-8 bg-primary-500 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
+						<svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M5 11.917 9.724 16.5 19 7.5" />
+						</svg>
+					</span>
+					<p class="hidden md:flex">Persönliche Infos</p>
+				</a>
 			</li>
-			<li class="mb-10 ms-6 flex items-center">
-				<span
-					class="absolute flex items-center justify-center w-8 h-8 bg-gray-500  rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
-					<svg class="w-4 h-4 text-white dark:text-white" aria-hidden="true"
-						xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-						viewBox="0 0 24 24">
-						<path fill-rule="evenodd"
-							d="M9 2.221V7H4.221a2 2 0 0 1 .365-.5L8.5 2.586A2 2 0 0 1 9 2.22ZM11 2v5a2 2 0 0 1-2 2H4v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-7ZM8 16a1 1 0 0 1 1-1h6a1 1 0 1 1 0 2H9a1 1 0 0 1-1-1Zm1-5a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2H9Z"
-							clip-rule="evenodd" />
-					</svg>
-				</span>
-				<a href="{% url 'bildungsweg' %}" class="font-medium leading-tight flex">Bildungsweg</a>
+
+			<li class="md:mb-10 md:ms-6 m-auto py-5 flex items-center">
+				<a href="{% url 'bildungsweg' %}" class="font-medium leading-tight flex items-center">
+					<span
+						class="absolute flex items-center justify-center w-8 h-8 bg-gray-500 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
+						<svg class="w-4 h-4 text-white dark:text-white" aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+							viewBox="0 0 24 24">
+							<path fill-rule="evenodd"
+								d="M9 2.221V7H4.221a2 2 0 0 1 .365-.5L8.5 2.586A2 2 0 0 1 9 2.22ZM11 2v5a2 2 0 0 1-2 2H4v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-7ZM8 16a1 1 0 0 1 1-1h6a1 1 0 1 1 0 2H9a1 1 0 0 1-1-1Zm1-5a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2H9Z"
+								clip-rule="evenodd" />
+						</svg>
+					</span>
+					<p class="hidden md:flex">Bildungsweg</p>
+				</a>
 			</li>
-			<li class="mb-10 ms-6 flex items-center">
-				<span
-					class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
-					<svg class="w-4 h-4 text-gray-500 dark:text-white" aria-hidden="true"
-						xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-						viewBox="0 0 24 24">
-						<path fill-rule="evenodd"
-							d="M4 4a2 2 0 0 0-2 2v12a2 2 0 0 0 .087.586l2.977-7.937A1 1 0 0 1 6 10h12V9a2 2 0 0 0-2-2h-4.532l-1.9-2.28A2 2 0 0 0 8.032 4H4Zm2.693 8H6.5l-3 8H18l3-8H6.693Z"
-							clip-rule="evenodd" />
-					</svg>
-				</span>
-				<a href="{% url 'dokumente' %}" class="font-medium leading-tight flex">Dokumente</a>
+			<li class="md:mb-10 md:ms-6 m-auto py-5 flex items-center">
+				<a href="{% url 'dokumente' %}" class="font-medium leading-tight flex items-center">
+					<span
+						class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
+						<svg class="w-4 h-4 text-gray-500 dark:text-white" aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+							viewBox="0 0 24 24">
+							<path fill-rule="evenodd"
+								d="M4 4a2 2 0 0 0-2 2v12a2 2 0 0 0 .087.586l2.977-7.937A1 1 0 0 1 6 10h12V9a2 2 0 0 0-2-2h-4.532l-1.9-2.28A2 2 0 0 0 8.032 4H4Zm2.693 8H6.5l-3 8H18l3-8H6.693Z"
+								clip-rule="evenodd" />
+						</svg>
+					</span>
+					<p class="hidden md:flex">Dokumente</p>
+				</a>
 			</li>
-			<li class="mb-10 ms-6 flex items-center">
-				<span
-					class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
-					<svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
-						xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
-						<path
-							d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm-3 14H5a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Zm0-4H5a1 1 0 0 1 0-2h8a1 1 0 1 1 0 2Zm0-5H5a1 1 0 0 1 0-2h2V2h4v2h2a1 1 0 1 1 0 2Z" />
-					</svg>
-				</span>
-				<a href="#" class="font-medium leading-tight flex">Fragebogen</a>
+			<li class="md:mb-10 md:ms-6 m-auto py-5 flex items-center">
+				<a href="#" class="font-medium leading-tight flex items-center">
+					<span
+						class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
+						<svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+							<path
+								d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm-3 14H5a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Zm0-4H5a1 1 0 0 1 0-2h8a1 1 0 1 1 0 2Zm0-5H5a1 1 0 0 1 0-2h2V2h4v2h2a1 1 0 1 1 0 2Z" />
+						</svg>
+					</span>
+					<p class="hidden md:flex">Fragebogen</p>
+				</a>
 			</li>
-			<li class="mb-10 ms-6 flex items-center">
-				<span
-					class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
-					<svg class="w-4.3 h-4.3 text-gray-500 dark:text-white" aria-hidden="true"
-						xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-						viewBox="0 0 24 24">
-						<path fill-rule="evenodd"
-							d="M11.644 3.066a1 1 0 0 1 .712 0l7 2.666A1 1 0 0 1 20 6.68a17.694 17.694 0 0 1-2.023 7.98 17.406 17.406 0 0 1-5.402 6.158 1 1 0 0 1-1.15 0 17.405 17.405 0 0 1-5.403-6.157A17.695 17.695 0 0 1 4 6.68a1 1 0 0 1 .644-.949l7-2.666Zm4.014 7.187a1 1 0 0 0-1.316-1.506l-3.296 2.884-.839-.838a1 1 0 0 0-1.414 1.414l1.5 1.5a1 1 0 0 0 1.366.046l4-3.5Z"
-							clip-rule="evenodd" />
-					</svg>
-				</span>
-				<a href="#" class="font-medium leading-tight flex">Datenschutz</a>
+			<li class="md:mb-10 md:ms-6 m-auto py-5 flex items-center">
+				<a href="#" class="font-medium leading-tight flex items-center">
+					<span
+						class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
+						<svg class="w-4.3 h-4.3 text-gray-500 dark:text-white" aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+							viewBox="0 0 24 24">
+							<path fill-rule="evenodd"
+								d="M11.644 3.066a1 1 0 0 1 .712 0l7 2.666A1 1 0 0 1 20 6.68a17.694 17.694 0 0 1-2.023 7.98 17.406 17.406 0 0 1-5.402 6.158 1 1 0 0 1-1.15 0 17.405 17.405 0 0 1-5.403-6.157A17.695 17.695 0 0 1 4 6.68a1 1 0 0 1 .644-.949l7-2.666Zm4.014 7.187a1 1 0 0 0-1.316-1.506l-3.296 2.884-.839-.838a1 1 0 0 0-1.414 1.414l1.5 1.5a1 1 0 0 0 1.366.046l4-3.5Z"
+								clip-rule="evenodd" />
+						</svg>
+					</span>
+					<p class="hidden md:flex">Datenschutz</p>
+				</a>
 			</li>
-			<li class="ms-6 flex items-center">
-				<span
-					class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
-					<svg class="w-4.5 h-4.5 text-gray-500 dark:text-white" aria-hidden="true"
-						xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-							d="M5 11.917 9.724 16.5 19 7.5" />
-					</svg>
-				</span>
-				<a href="#" class="font-medium leading-tight flex">Übersicht</a>
+			<li class="md:mb-10 md:ms-6 m-auto py-5 flex items-center">
+				<a href="#" class="font-medium leading-tight flex items-center">
+					<span
+						class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
+						<svg class="w-4.5 h-4.5 text-gray-500 dark:text-white" aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M5 11.917 9.724 16.5 19 7.5" />
+						</svg>
+					</span>
+					<p class="hidden md:flex">Übersicht</p>
+				</a>
+			</li>
+		</ol>
+	</div>
+	<!-- sm stepper -->
+	<div class="bg-g m-1 w-fit block md:hidden">
+		<ol class="flex items-center w-full">
+			<li
+				class="flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-100 after:border-4 after:inline-block dark:after:border-gray-700">
+				<a href="{% url 'home' %}">
+					<span
+						class="flex items-center justify-center w-10 h-10 bg-primary-500 rounded-full lg:h-12 lg:w-12 dark:bg-gray-700 shrink-0">
+						<svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M5 11.917 9.724 16.5 19 7.5" />
+						</svg>
+					</span>
+				</a>
+			</li>
+			<li
+				class="flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-100 after:border-4 after:inline-block dark:after:border-gray-700">
+				<a href="{% url 'persoenlicheinfos' %}">
+					<span
+						class="flex items-center justify-center w-10 h-10 bg-primary-500 rounded-full lg:h-12 lg:w-12 dark:bg-gray-700 shrink-0">
+						<svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M5 11.917 9.724 16.5 19 7.5" />
+						</svg>
+					</span>
+				</a>
+			</li>
+			<li
+				class="flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-100 after:border-4 after:inline-block dark:after:border-gray-700">
+				<a href="{% url 'bildungsweg' %}">
+					<span
+						class="flex items-center justify-center w-10 h-10 bg-gray-500 rounded-full lg:h-12 lg:w-12 dark:bg-gray-700 shrink-0">
+						<svg class="w-4 h-4 text-white dark:text-white" aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+							viewBox="0 0 24 24">
+							<path fill-rule="evenodd"
+								d="M9 2.221V7H4.221a2 2 0 0 1 .365-.5L8.5 2.586A2 2 0 0 1 9 2.22ZM11 2v5a2 2 0 0 1-2 2H4v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-7ZM8 16a1 1 0 0 1 1-1h6a1 1 0 1 1 0 2H9a1 1 0 0 1-1-1Zm1-5a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2H9Z"
+								clip-rule="evenodd" />
+						</svg>
+					</span>
+				</a>
+			</li>
+			<li
+				class="flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-100 after:border-4 after:inline-block dark:after:border-gray-700">
+				<a href="{% url 'dokumente' %}">
+					<span
+						class="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full lg:h-12 lg:w-12 dark:bg-gray-700 shrink-0">
+						<svg class="w-4 h-4 text-gray-500 dark:text-white" aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+							viewBox="0 0 24 24">
+							<path fill-rule="evenodd"
+								d="M4 4a2 2 0 0 0-2 2v12a2 2 0 0 0 .087.586l2.977-7.937A1 1 0 0 1 6 10h12V9a2 2 0 0 0-2-2h-4.532l-1.9-2.28A2 2 0 0 0 8.032 4H4Zm2.693 8H6.5l-3 8H18l3-8H6.693Z"
+								clip-rule="evenodd" />
+						</svg>
+					</span>
+				</a>
+			</li>
+			<li
+				class="flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-100 after:border-4 after:inline-block dark:after:border-gray-700">
+				<a href="#">
+					<span
+						class="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full lg:h-12 lg:w-12 dark:bg-gray-700 shrink-0">
+						<svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+							<path
+								d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm-3 14H5a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Zm0-4H5a1 1 0 0 1 0-2h8a1 1 0 1 1 0 2Zm0-5H5a1 1 0 0 1 0-2h2V2h4v2h2a1 1 0 1 1 0 2Z" />
+						</svg>
+					</span>
+				</a>
+			</li>
+			<li
+				class="flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-100 after:border-4 after:inline-block dark:after:border-gray-700">
+				<a href="#">
+					<span
+						class="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full lg:h-12 lg:w-12 dark:bg-gray-700 shrink-0">
+						<svg class="w-4.3 h-4.3 text-gray-500 dark:text-white" aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+							viewBox="0 0 24 24">
+							<path fill-rule="evenodd"
+								d="M11.644 3.066a1 1 0 0 1 .712 0l7 2.666A1 1 0 0 1 20 6.68a17.694 17.694 0 0 1-2.023 7.98 17.406 17.406 0 0 1-5.402 6.158 1 1 0 0 1-1.15 0 17.405 17.405 0 0 1-5.403-6.157A17.695 17.695 0 0 1 4 6.68a1 1 0 0 1 .644-.949l7-2.666Zm4.014 7.187a1 1 0 0 0-1.316-1.506l-3.296 2.884-.839-.838a1 1 0 0 0-1.414 1.414l1.5 1.5a1 1 0 0 0 1.366.046l4-3.5Z"
+								clip-rule="evenodd" />
+						</svg>
+					</span>
+				</a>
+			</li>
+			<li class="flex items-center w-full">
+				<a href="#">
+					<span
+						class="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full lg:h-12 lg:w-12 dark:bg-gray-700 shrink-0">
+						<svg class="w-4.5 h-4.5 text-gray-500 dark:text-white" aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M5 11.917 9.724 16.5 19 7.5" />
+						</svg>
+					</span>
+				</a>
 			</li>
 		</ol>
 	</div>
@@ -134,42 +251,42 @@
 	</div>
 </div>
 <!-- input felder div -->
-<div class="border-b-2  border-gray-200">
+<div class="border-b-2  border-gray-200 px-4">
 	<h1 class="text-gray-500 text-m my-4">Bitte trage, soweit erhalten, folgende Noten deines letzten Zeugnisses ein
 	</h1>
 	<div class="flex flex-wrap -mx-2 mb-4 py-4">
 		<div class="w-full md:w-1/2 px-2 mb-4 md:mb-0">
 			<label for="german-grade" class="block text-sm font-medium text-gray-700">Note in Deutsch</label>
-			<input type="text" id="german-grade"
+			<input type="number" id="german-grade"
 				class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
 		</div>
 		<div class="w-full md:w-1/2 px-2">
 			<label for="biology-grade" class="block text-sm font-medium text-gray-700">Note in Biologie</label>
-			<input type="text" id="biology-grade"
+			<input type="number" id="biology-grade"
 				class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
 		</div>
 	</div>
 	<div class="flex flex-wrap -mx-2 mb-4 pb-4">
 		<div class="w-full md:w-1/2 px-2 mb-4 md:mb-0">
 			<label for="math-grade" class="block text-sm font-medium text-gray-700">Note in Mathematik</label>
-			<input type="text" id="math-grade"
+			<input type="number" id="math-grade"
 				class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
 		</div>
 		<div class="w-full md:w-1/2 px-2 ">
 			<label for="chemistry-grade" class="block text-sm font-medium text-gray-700">Note in Chemie</label>
-			<input type="text" id="chemistry-grade"
+			<input type="number" id="chemistry-grade"
 				class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
 		</div>
 	</div>
 	<div class="flex flex-wrap -mx-2 mb-4 pb-4">
 		<div class="w-full md:w-1/2 px-2 mb-4 md:mb-0">
 			<label for="physics-grade" class="block text-sm font-medium text-gray-700">Note in Physik</label>
-			<input type="text" id="physics-grade"
+			<input type="number" id="physics-grade"
 				class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
 		</div>
 		<div class="w-full md:w-1/2 px-2">
 			<label for="english-grade" class="block text-sm font-medium text-gray-700">Note in Englisch</label>
-			<input type="text" id="english-grade"
+			<input type="number" id="english-grade"
 				class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
 		</div>
 	</div>
@@ -305,17 +422,20 @@
 	</div>
 </div>
 
-<div class="mb-4">
-	<table class="min-w-full divide-y divide-gray-200 mb-20">
+<div class="w-full overflow-x-scroll">
+	<table class="min-w-full divide-y divide-gray-200 md:mb-20 w-full">
 		<thead class="bg-gray-50">
 			<tr>
-				<th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+				<th scope="col"
+					class="md:px-6 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
 					Abschluss</th>
-				<th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+				<th scope="col"
+					class="md:px-6 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
 					Institution</th>
-				<th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+				<th scope="col"
+					class="md:px-6 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
 					Zeitraum</th>
-				<th scope="col" class="relative px-6 py-3">
+				<th scope="col" class="relative md:px-6 md:py-3">
 					<span class="sr-only">Bearbeiten</span>
 				</th>
 			</tr>
@@ -325,6 +445,8 @@
 		</tbody>
 	</table>
 </div>
+
+
 
 
 

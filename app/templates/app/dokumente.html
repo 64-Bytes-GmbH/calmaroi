@@ -8,106 +8,204 @@
 
 {% block contentleft %}
 <!-- stepper -->
-<div class=" bg-white rounded-xl bg-transparent bg-opacity-30 h-auto w-auto my-5">
-
-	<div class="bg-g m-7 ">
-
-
-		<ol class="relative text-white border-s border-grey-200 dark:border-gray-700 dark:text-gray-400 space-y-16">
-			<!-- Ausbildungsrichtung -->
-			<li class="mb-10 ms-6 flex items-center">
-				<span
-					class="absolute flex items-center justify-center w-8 h-8 bg-primary-500 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
-					<svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true"
-						xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-							d="M5 11.917 9.724 16.5 19 7.5" />
-					</svg>
-				</span>
-				<a href="{% url 'home' %}" class="font-medium leading-tight">Ausbildungsrichtung</a>
+<div class=" bg-white rounded-xl bg-opacity-30 md:my-5 m-auto ">
+	<!-- md stepper -->
+	<div class="bg-g m-7 hidden md:block">
+		<ol class="relative text-white border-s border-gray-200 space-y-16 ">
+			<li class="md:mb-10 md:ms-6 m-auto py-5 flex items-center">
+				<a href="{% url 'home' %}" class="font-medium leading-tight flex items-center">
+					<span
+						class="absolute flex items-center justify-center w-8 h-8 bg-primary-500 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
+						<svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M5 11.917 9.724 16.5 19 7.5" />
+						</svg>
+					</span>
+					<p class="hidden md:flex">Ausbildungsrichtung</p>
+				</a>
 			</li>
-			<!-- Persönliche Infos -->
-			<li class="mb-10 ms-6 flex items-center">
-				<span
-					class="absolute flex items-center justify-center w-8 h-8 bg-primary-500 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
-					<svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true"
-						xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-							d="M5 11.917 9.724 16.5 19 7.5" />
-					</svg>
-				</span>
-				<a href="{% url 'persoenlicheinfos' %}" class="font-medium leading-tight flex">Persönliche Infos</a>
-			</li>
-
-			<!-- Bildungsweg -->
-			<li class="mb-10 ms-6 flex items-center">
-				<span
-					class="absolute flex items-center justify-center w-8 h-8 bg-primary-500  rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
-					<svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true"
-						xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-							d="M5 11.917 9.724 16.5 19 7.5" />
-					</svg>
-				</span>
-				<a href="{% url 'bildungsweg' %}" class="font-medium leading-tight flex">Bildungsweg</a>
+			<li class="md:mb-10 md:ms-6 m-auto py-5 flex items-center">
+				<a href="{% url 'persoenlicheinfos' %}" class="font-medium leading-tight flex items-center">
+					<span
+						class="absolute flex items-center justify-center w-8 h-8 bg-primary-500 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
+						<svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M5 11.917 9.724 16.5 19 7.5" />
+						</svg>
+					</span>
+					<p class="hidden md:flex">Persönliche Infos</p>
+				</a>
 			</li>
 
-			<!-- Dokumente -->
-			<li class="mb-10 ms-6 flex items-center">
-				<span
-					class="absolute flex items-center justify-center w-8 h-8 bg-gray-500  rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
-					<svg class="w-4 h-4 text-white dark:text-white" aria-hidden="true"
-						xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-						viewBox="0 0 24 24">
-						<path fill-rule="evenodd"
-							d="M4 4a2 2 0 0 0-2 2v12a2 2 0 0 0 .087.586l2.977-7.937A1 1 0 0 1 6 10h12V9a2 2 0 0 0-2-2h-4.532l-1.9-2.28A2 2 0 0 0 8.032 4H4Zm2.693 8H6.5l-3 8H18l3-8H6.693Z"
-							clip-rule="evenodd" />
-					</svg>
-
-				</span>
-				<a href="{% url 'dokumente' %}" class="font-medium leading-tight flex">Dokumente</a>
+			<li class="md:mb-10 md:ms-6 m-auto py-5 flex items-center">
+				<a href="{% url 'bildungsweg' %}" class="font-medium leading-tight flex items-center">
+					<span
+						class="absolute flex items-center justify-center w-8 h-8 bg-primary-500 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
+						<svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M5 11.917 9.724 16.5 19 7.5" />
+						</svg>
+					</span>
+					<p class="hidden md:flex">Bildungsweg</p>
+				</a>
 			</li>
-
-			<!-- Fragebogen -->
-			<li class="mb-10 ms-6 flex items-center">
-				<span
-					class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
-					<svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
-						xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
-						<path
-							d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm-3 14H5a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Zm0-4H5a1 1 0 0 1 0-2h8a1 1 0 1 1 0 2Zm0-5H5a1 1 0 0 1 0-2h2V2h4v2h2a1 1 0 1 1 0 2Z" />
-					</svg>
-				</span>
-				<a href="#" class="font-medium leading-tight flex">Fragebogen</a>
+			<li class="md:mb-10 md:ms-6 m-auto py-5 flex items-center">
+				<a href="{% url 'dokumente' %}" class="font-medium leading-tight flex items-center">
+					<span
+						class="absolute flex items-center justify-center w-8 h-8 bg-gray-500 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
+						<svg class="w-4 h-4 text-white dark:text-white" aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+							viewBox="0 0 24 24">
+							<path fill-rule="evenodd"
+								d="M4 4a2 2 0 0 0-2 2v12a2 2 0 0 0 .087.586l2.977-7.937A1 1 0 0 1 6 10h12V9a2 2 0 0 0-2-2h-4.532l-1.9-2.28A2 2 0 0 0 8.032 4H4Zm2.693 8H6.5l-3 8H18l3-8H6.693Z"
+								clip-rule="evenodd" />
+						</svg>
+					</span>
+					<p class="hidden md:flex">Dokumente</p>
+				</a>
 			</li>
-
-			<!-- Datenschutz -->
-			<li class="mb-10 ms-6 flex items-center">
-				<span
-					class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
-					<svg class="w-4.3 h-4.3 text-gray-500 dark:text-white" aria-hidden="true"
-						xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-						viewBox="0 0 24 24">
-						<path fill-rule="evenodd"
-							d="M11.644 3.066a1 1 0 0 1 .712 0l7 2.666A1 1 0 0 1 20 6.68a17.694 17.694 0 0 1-2.023 7.98 17.406 17.406 0 0 1-5.402 6.158 1 1 0 0 1-1.15 0 17.405 17.405 0 0 1-5.403-6.157A17.695 17.695 0 0 1 4 6.68a1 1 0 0 1 .644-.949l7-2.666Zm4.014 7.187a1 1 0 0 0-1.316-1.506l-3.296 2.884-.839-.838a1 1 0 0 0-1.414 1.414l1.5 1.5a1 1 0 0 0 1.366.046l4-3.5Z"
-							clip-rule="evenodd" />
-					</svg>
-
-				</span>
-				<a href="#" class="font-medium leading-tight flex">Datenschutz</a>
+			<li class="md:mb-10 md:ms-6 m-auto py-5 flex items-center">
+				<a href="#" class="font-medium leading-tight flex items-center">
+					<span
+						class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
+						<svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+							<path
+								d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm-3 14H5a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Zm0-4H5a1 1 0 0 1 0-2h8a1 1 0 1 1 0 2Zm0-5H5a1 1 0 0 1 0-2h2V2h4v2h2a1 1 0 1 1 0 2Z" />
+						</svg>
+					</span>
+					<p class="hidden md:flex">Fragebogen</p>
+				</a>
 			</li>
-
-			<!-- Übersicht -->
-			<li class="ms-6 flex items-center">
-				<span
-					class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
-					<svg class="w-4.5 h-4.5 text-gray-500 dark:text-white" aria-hidden="true"
-						xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-							d="M5 11.917 9.724 16.5 19 7.5" />
-					</svg>
-				</span>
-				<a href="#" class="font-medium leading-tight flex">Übersicht</a>
+			<li class="md:mb-10 md:ms-6 m-auto py-5 flex items-center">
+				<a href="#" class="font-medium leading-tight flex items-center">
+					<span
+						class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
+						<svg class="w-4.3 h-4.3 text-gray-500 dark:text-white" aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+							viewBox="0 0 24 24">
+							<path fill-rule="evenodd"
+								d="M11.644 3.066a1 1 0 0 1 .712 0l7 2.666A1 1 0 0 1 20 6.68a17.694 17.694 0 0 1-2.023 7.98 17.406 17.406 0 0 1-5.402 6.158 1 1 0 0 1-1.15 0 17.405 17.405 0 0 1-5.403-6.157A17.695 17.695 0 0 1 4 6.68a1 1 0 0 1 .644-.949l7-2.666Zm4.014 7.187a1 1 0 0 0-1.316-1.506l-3.296 2.884-.839-.838a1 1 0 0 0-1.414 1.414l1.5 1.5a1 1 0 0 0 1.366.046l4-3.5Z"
+								clip-rule="evenodd" />
+						</svg>
+					</span>
+					<p class="hidden md:flex">Datenschutz</p>
+				</a>
+			</li>
+			<li class="md:mb-10 md:ms-6 m-auto py-5 flex items-center">
+				<a href="#" class="font-medium leading-tight flex items-center">
+					<span
+						class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
+						<svg class="w-4.5 h-4.5 text-gray-500 dark:text-white" aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M5 11.917 9.724 16.5 19 7.5" />
+						</svg>
+					</span>
+					<p class="hidden md:flex">Übersicht</p>
+				</a>
+			</li>
+		</ol>
+	</div>
+	<!-- sm stepper -->
+	<div class="bg-g m-1 w-fit block md:hidden">
+		<ol class="flex items-center w-full">
+			<li
+				class="flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-100 after:border-4 after:inline-block dark:after:border-gray-700">
+				<a href="{% url 'home' %}">
+					<span
+						class="flex items-center justify-center w-10 h-10 bg-primary-500 rounded-full lg:h-12 lg:w-12 dark:bg-gray-700 shrink-0">
+						<svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M5 11.917 9.724 16.5 19 7.5" />
+						</svg>
+					</span>
+				</a>
+			</li>
+			<li
+				class="flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-100 after:border-4 after:inline-block dark:after:border-gray-700">
+				<a href="{% url 'persoenlicheinfos' %}">
+					<span
+						class="flex items-center justify-center w-10 h-10 bg-primary-500 rounded-full lg:h-12 lg:w-12 dark:bg-gray-700 shrink-0">
+						<svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M5 11.917 9.724 16.5 19 7.5" />
+						</svg>
+					</span>
+				</a>
+			</li>
+			<li
+				class="flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-100 after:border-4 after:inline-block dark:after:border-gray-700">
+				<a href="{% url 'bildungsweg' %}">
+					<span
+						class="flex items-center justify-center w-10 h-10 bg-primary-500 rounded-full lg:h-12 lg:w-12 dark:bg-gray-700 shrink-0">
+						<svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M5 11.917 9.724 16.5 19 7.5" />
+						</svg>
+					</span>
+				</a>
+			</li>
+			<li
+				class="flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-100 after:border-4 after:inline-block dark:after:border-gray-700">
+				<a href="{% url 'dokumente' %}">
+					<span
+						class="flex items-center justify-center w-10 h-10 bg-gray-500 rounded-full lg:h-12 lg:w-12 dark:bg-gray-700 shrink-0">
+						<svg class="w-4 h-4 text-white dark:text-white" aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+							viewBox="0 0 24 24">
+							<path fill-rule="evenodd"
+								d="M4 4a2 2 0 0 0-2 2v12a2 2 0 0 0 .087.586l2.977-7.937A1 1 0 0 1 6 10h12V9a2 2 0 0 0-2-2h-4.532l-1.9-2.28A2 2 0 0 0 8.032 4H4Zm2.693 8H6.5l-3 8H18l3-8H6.693Z"
+								clip-rule="evenodd" />
+						</svg>
+					</span>
+				</a>
+			</li>
+			<li
+				class="flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-100 after:border-4 after:inline-block dark:after:border-gray-700">
+				<a href="#">
+					<span
+						class="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full lg:h-12 lg:w-12 dark:bg-gray-700 shrink-0">
+						<svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+							<path
+								d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm-3 14H5a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Zm0-4H5a1 1 0 0 1 0-2h8a1 1 0 1 1 0 2Zm0-5H5a1 1 0 0 1 0-2h2V2h4v2h2a1 1 0 1 1 0 2Z" />
+						</svg>
+					</span>
+				</a>
+			</li>
+			<li
+				class="flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-100 after:border-4 after:inline-block dark:after:border-gray-700">
+				<a href="#">
+					<span
+						class="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full lg:h-12 lg:w-12 dark:bg-gray-700 shrink-0">
+						<svg class="w-4.3 h-4.3 text-gray-500 dark:text-white" aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+							viewBox="0 0 24 24">
+							<path fill-rule="evenodd"
+								d="M11.644 3.066a1 1 0 0 1 .712 0l7 2.666A1 1 0 0 1 20 6.68a17.694 17.694 0 0 1-2.023 7.98 17.406 17.406 0 0 1-5.402 6.158 1 1 0 0 1-1.15 0 17.405 17.405 0 0 1-5.403-6.157A17.695 17.695 0 0 1 4 6.68a1 1 0 0 1 .644-.949l7-2.666Zm4.014 7.187a1 1 0 0 0-1.316-1.506l-3.296 2.884-.839-.838a1 1 0 0 0-1.414 1.414l1.5 1.5a1 1 0 0 0 1.366.046l4-3.5Z"
+								clip-rule="evenodd" />
+						</svg>
+					</span>
+				</a>
+			</li>
+			<li class="flex items-center w-full">
+				<a href="#">
+					<span
+						class="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full lg:h-12 lg:w-12 dark:bg-gray-700 shrink-0">
+						<svg class="w-4.5 h-4.5 text-gray-500 dark:text-white" aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M5 11.917 9.724 16.5 19 7.5" />
+						</svg>
+					</span>
+				</a>
 			</li>
 		</ol>
 	</div>
@@ -144,7 +242,7 @@
 				aria-describedby="file_input_help" id="file_input" type="file">
 		</div>
 	</div>
-	<div class="flex-2  flex w-full my-5">
+	<div class="flex-2 flex md:flex-1 w-full my-5">
 		<div class="flex-1  flex w-1/2 flex-col mr-5">
 			<label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
 				for="file_input">Lebenslauf*</label>
@@ -169,10 +267,10 @@
 	</div>
 	<div class="mb-4 py-3">
 
+
 		<!-- Modal toggle -->
-		<button data-modal-target="uploadExtra-modal" data-modal-toggle="uploadExtra-modal"
-			class="upload-extra-file block text-white bg-primary-500 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-			type="button" id="upload-extra-file">
+		<button id="upload-extra-file"
+			class="upload-extra-file block text-white bg-primary-500 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
 			+ Weitere Dateien hochladen
 		</button>
 
@@ -188,7 +286,7 @@
 							Weitere Dateien hochladen
 						</h3>
 						<button type="button"
-							class="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+							class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
 							data-modal-hide="uploadExtra-modal">
 							<svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
 								viewBox="0 0 14 14">
@@ -208,10 +306,9 @@
 								<select id="education-form-filedescription" name="filedescription"
 									class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
 									<option selected disabled>Datei art auswählen</option>
-									{% get_choices 'FilesChoices' as Files %}
-									{% for item in Files %}
-									<option value="{{ item.0 }}">{{ item.1 }}</option>
-									{% endfor %}
+									<!-- Placeholder for dynamic options -->
+									<option value="1">Option 1</option>
+									<option value="2">Option 2</option>
 								</select>
 							</div>
 							<div>
@@ -225,9 +322,8 @@
 								</p>
 							</div>
 
-							<button type="submit" id="upload-extra-file"
+							<button type="submit"
 								class="w-full text-white bg-primary-500 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">hochladen</button>
-
 						</form>
 					</div>
 				</div>
