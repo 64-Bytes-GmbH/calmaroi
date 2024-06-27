@@ -19,6 +19,10 @@
 
 {% endblock %} 
 
+{% block right_navbuttons %}
+    {% include 'dashboard/application/common/side_navigation_toggler.html' %}
+{% endblock %}
+
 {% block right_sidebar %}
     {% include 'dashboard/application/common/side_navigation.html' %}
 {% endblock %}

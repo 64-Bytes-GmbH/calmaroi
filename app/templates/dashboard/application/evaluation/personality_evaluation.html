@@ -1,6 +1,6 @@
 {% extends "dashboard/base.html" %}
 
-{% load static %} 
+{% load static %}
 
 {% block title %} Bewertung | Persönlichkeit {% endblock %}
 
@@ -19,8 +19,8 @@
                 <div class="flex flex-col bg-white shadow-sm rounded-lg">
                     <!-- accordion header -->
                     <div class="flex items-center gap-2 p-5 justify-between flex-wrap flex-1">
-                        <h5 class="font-medium text-[17px]">
-                            Bewertung  |  Persönlichkeit 
+                        <h5 class="font-medium text-[17px] text-gray-900">
+                            Bewertung | Persönlichkeit
                         </h5>
                         <div class="flex items-stretch gap-2 ml-auto">
                             <button class="px-2" data-accordion-target="#accordion-personality-evaluation"
@@ -34,22 +34,268 @@
                         </div>
                     </div>
                     <!-- accordion body -->
-                    <div class="" id="accordion-personality-evaluation">
-                        <div class="flex flex-col gap-2 px-5 pb-5">
-                            <h1>Placeholder</h1>
+                    <div id="accordion-personality-evaluation">
+                        <div class="flex flex-col gap-[30px] px-5 pb-5">
+                            <!-- Motivationsvideo -->
+                            <div class="flex flex-col gap-2.5">
+                                <h5 class="font-medium text-sm text-gray-900">Persönliches Motivationsvideo des
+                                    Bewerbers?</h5>
+
+                                <!-- Video placeholder -->
+                                <img src="{% static 'dashboard/img/application/demo-user-video.jpg' %}"
+                                    class="h-80 w-fit max-w-full object-contain" alt="Motivationsvideo des Bewerbers">
+
+                                <!-- Motivationsvideo Bewertung -->
+                                <div class="flex gap-2 items-center flex-wrap">
+                                    <div class="flex items-center w-20 md:w-28 max-w-full">
+                                        <input id="motivation-video-1" type="radio" value="1" name="motivation-video"
+                                            class="hidden peer">
+                                        <label for="motivation-video-1"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white cursor-pointer hover:bg-gray-400 transition duration-200 ease-in-out">Schlecht</label>
+                                    </div>
+                                    <div class="flex items-center w-20 md:w-28 max-w-full">
+                                        <input checked id="motivation-video-2" type="radio" value="2"
+                                            name="motivation-video" class="hidden peer">
+                                        <label for="motivation-video-2"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white cursor-pointer hover:bg-gray-400 transition duration-200 ease-in-out">2</label>
+                                    </div>
+                                    <div class="flex items-center w-20 md:w-28 max-w-full">
+                                        <input id="motivation-video-3" type="radio" value="3" name="motivation-video"
+                                            class="hidden peer">
+                                        <label for="motivation-video-3"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white cursor-pointer hover:bg-gray-400 transition duration-200 ease-in-out">3</label>
+                                    </div>
+                                    <div class="flex items-center w-20 md:w-28 max-w-full">
+                                        <input checked id="motivation-video-4" type="radio" value="4"
+                                            name="motivation-video" class="hidden peer">
+                                        <label for="motivation-video-4"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white cursor-pointer hover:bg-gray-400 transition duration-200 ease-in-out">4</label>
+                                    </div>
+                                    <div class="flex items-center w-20 md:w-28 max-w-full">
+                                        <input id="motivation-video-5" type="radio" value="5" name="motivation-video"
+                                            class="hidden peer">
+                                        <label for="motivation-video-5"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white cursor-pointer hover:bg-gray-400 transition duration-200 ease-in-out">Sehr
+                                            gut</label>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Motivationsschreiben -->
+                            <div class="flex flex-col gap-2.5">
+                                <h5 class="font-medium text-sm text-gray-900">Wie bewerten Sie das Motivationsschreiben
+                                    des Bewerbers?</h5>
+
+                                <a class="flex gap-2 items-center px-4 py-2 bg-gray-300 hover:bg-gray-400 rounded-lg border-2 border-primary text-gray-900 text-xs w-fit"
+                                    target="_blank" href="#">
+                                    <span>Motivationsschreiben ansehen</span>
+                                    <svg class="w-2.5 h-4" viewBox="0 0 10 14" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1.66667 0.5C0.747396 0.5 0 1.22871 0 2.125V11.875C0 12.7713 0.747396 13.5 1.66667 13.5H8.33333C9.2526 13.5 10 12.7713 10 11.875V4.5625H6.66667C6.20573 4.5625 5.83333 4.19941 5.83333 3.75V0.5H1.66667ZM6.66667 0.5V3.75H10L6.66667 0.5ZM5.625 6.39062V8.98301L6.43229 8.1959C6.67708 7.95723 7.07292 7.95723 7.3151 8.1959C7.55729 8.43457 7.5599 8.82051 7.3151 9.05664L5.4401 10.8848C5.19531 11.1234 4.79948 11.1234 4.55729 10.8848L2.68229 9.05664C2.4375 8.81797 2.4375 8.43203 2.68229 8.1959C2.92708 7.95977 3.32292 7.95723 3.5651 8.1959L4.3724 8.98301V6.39062C4.3724 6.05293 4.65104 5.78125 4.9974 5.78125C5.34375 5.78125 5.6224 6.05293 5.6224 6.39062H5.625Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                </a>
+
+                                <!-- Motivationsschreiben Bewertung -->
+                                <div class="flex gap-2 items-center flex-wrap">
+                                    <div class="flex items-center w-20 md:w-28 max-w-full">
+                                        <input id="motivation-letter-1" type="radio" value="1" name="motivation-letter"
+                                            class="hidden peer">
+                                        <label for="motivation-letter-1"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white cursor-pointer hover:bg-gray-400 transition duration-200 ease-in-out">Schlecht</label>
+                                    </div>
+                                    <div class="flex items-center w-20 md:w-28 max-w-full">
+                                        <input checked id="motivation-letter-2" type="radio" value="2"
+                                            name="motivation-letter" class="hidden peer">
+                                        <label for="motivation-letter-2"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white cursor-pointer hover:bg-gray-400 transition duration-200 ease-in-out">2</label>
+                                    </div>
+                                    <div class="flex items-center w-20 md:w-28 max-w-full">
+                                        <input id="motivation-letter-3" type="radio" value="3" name="motivation-letter"
+                                            class="hidden peer">
+                                        <label for="motivation-letter-3"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white cursor-pointer hover:bg-gray-400 transition duration-200 ease-in-out">3</label>
+                                    </div>
+                                    <div class="flex items-center w-20 md:w-28 max-w-full">
+                                        <input checked id="motivation-letter-4" type="radio" value="4"
+                                            name="motivation-letter" class="hidden peer">
+                                        <label for="motivation-letter-4"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white cursor-pointer hover:bg-gray-400 transition duration-200 ease-in-out">4</label>
+                                    </div>
+                                    <div class="flex items-center w-20 md:w-28 max-w-full">
+                                        <input id="motivation-letter-5" type="radio" value="5" name="motivation-letter"
+                                            class="hidden peer">
+                                        <label for="motivation-letter-5"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white cursor-pointer hover:bg-gray-400 transition duration-200 ease-in-out">Sehr
+                                            gut</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Kennlerngespräch -->
+                            <div class="flex flex-col gap-2.5">
+                                <h5 class="font-medium text-sm text-gray-900">
+                                    Hat ein persönliches Kennlerngespräch mit dem Bewerber stattgefunden?
+                                </h5>
+                                <div class="flex gap-2 items-center flex-wrap">
+                                    <div class="flex items-center w-20 md:w-28 max-w-full">
+                                        <input id="introductory-meeting-yes" type="radio" value="yes" name="introductory-meeting" class="hidden peer">
+                                        <label for="introductory-meeting-yes"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white cursor-pointer hover:bg-gray-400 transition duration-200 ease-in-out">Ja</label>
+                                    </div>
+                                    <div class="flex items-center w-20 md:w-28 max-w-full">
+                                        <input checked id="introductory-meeting-no" type="radio" value="no" name="introductory-meeting" class="hidden peer">
+                                        <label for="introductory-meeting-no"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white cursor-pointer hover:bg-gray-400 transition duration-200 ease-in-out">Nein</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Bewertung Kennlerngespräch -->
+                            <div class="flex flex-col gap-2.5">
+                                <h5 class="font-medium text-sm text-gray-900">
+                                    Wie bewerten Sie das Kennlerngespräch?
+                                </h5>
+                                <div class="flex gap-2 items-center flex-wrap">
+                                    <div class="flex items-center w-20 md:w-28 max-w-full">
+                                        <input id="introductory-meeting-1" type="radio" value="1" name="introductory-meeting-review" class="hidden peer">
+                                        <label for="introductory-meeting-1"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white cursor-pointer hover:bg-gray-400 transition duration-200 ease-in-out">Schlecht</label>
+                                    </div>
+                                    <div class="flex items-center w-20 md:w-28 max-w-full">
+                                        <input checked id="introductory-meeting-2" type="radio" value="2" name="introductory-meeting-review"
+                                            class="hidden peer">
+                                        <label for="introductory-meeting-2"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white cursor-pointer hover:bg-gray-400 transition duration-200 ease-in-out">2</label>
+                                    </div>
+                                    <div class="flex items-center w-20 md:w-28 max-w-full">
+                                        <input id="introductory-meeting-3" type="radio" value="3" name="introductory-meeting-review" class="hidden peer">
+                                        <label for="introductory-meeting-3"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white cursor-pointer hover:bg-gray-400 transition duration-200 ease-in-out">3</label>
+                                    </div>
+                                    <div class="flex items-center w-20 md:w-28 max-w-full">
+                                        <input checked id="introductory-meeting-4" type="radio" value="4" name="introductory-meeting-review"
+                                            class="hidden peer">
+                                        <label for="introductory-meeting-4"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white cursor-pointer hover:bg-gray-400 transition duration-200 ease-in-out">4</label>
+                                    </div>
+                                    <div class="flex items-center w-20 md:w-28 max-w-full">
+                                        <input id="introductory-meeting-5" type="radio" value="5" name="introductory-meeting-review" class="hidden peer">
+                                        <label for="introductory-meeting-5"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white cursor-pointer hover:bg-gray-400 transition duration-200 ease-in-out">Sehr
+                                            gut</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Assessment-Centers -->
+                            <div class="flex flex-col gap-2.5">
+                                <h5 class="font-medium text-sm text-gray-900">
+                                    Wie schätzen Sie die Auswertung des Assessment-Centers ein?
+                                </h5>
+                                
+                                <a class="flex gap-2 items-center px-4 py-2 bg-gray-300 hover:bg-gray-400 rounded-lg border-2 border-primary text-gray-900 text-xs w-fit"
+                                    target="_blank" href="#">
+                                    <span>Assessment-Center ansehen</span>
+                                    <svg class="w-2.5 h-4" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1.66667 0.5C0.747396 0.5 0 1.22871 0 2.125V11.875C0 12.7713 0.747396 13.5 1.66667 13.5H8.33333C9.2526 13.5 10 12.7713 10 11.875V4.5625H6.66667C6.20573 4.5625 5.83333 4.19941 5.83333 3.75V0.5H1.66667ZM6.66667 0.5V3.75H10L6.66667 0.5ZM5.625 6.39062V8.98301L6.43229 8.1959C6.67708 7.95723 7.07292 7.95723 7.3151 8.1959C7.55729 8.43457 7.5599 8.82051 7.3151 9.05664L5.4401 10.8848C5.19531 11.1234 4.79948 11.1234 4.55729 10.8848L2.68229 9.05664C2.4375 8.81797 2.4375 8.43203 2.68229 8.1959C2.92708 7.95977 3.32292 7.95723 3.5651 8.1959L4.3724 8.98301V6.39062C4.3724 6.05293 4.65104 5.78125 4.9974 5.78125C5.34375 5.78125 5.6224 6.05293 5.6224 6.39062H5.625Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                </a>
+                                
+                                <!-- Motivationsschreiben Bewertung -->
+                                <div class="flex gap-2 items-center flex-wrap">
+                                    <div class="flex items-center w-20 md:w-28 max-w-full">
+                                        <input id="assessment-center-1" type="radio" value="1" name="assessment-center" class="hidden peer">
+                                        <label for="assessment-center-1"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white cursor-pointer hover:bg-gray-400 transition duration-200 ease-in-out">Schlecht</label>
+                                    </div>
+                                    <div class="flex items-center w-20 md:w-28 max-w-full">
+                                        <input checked id="assessment-center-2" type="radio" value="2" name="assessment-center" class="hidden peer">
+                                        <label for="assessment-center-2"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white cursor-pointer hover:bg-gray-400 transition duration-200 ease-in-out">2</label>
+                                    </div>
+                                    <div class="flex items-center w-20 md:w-28 max-w-full">
+                                        <input id="assessment-center-3" type="radio" value="3" name="assessment-center" class="hidden peer">
+                                        <label for="assessment-center-3"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white cursor-pointer hover:bg-gray-400 transition duration-200 ease-in-out outline outline-2 outline-offset-2 outline-primary">3</label>
+                                    </div>
+                                    <div class="flex items-center w-20 md:w-28 max-w-full">
+                                        <input checked id="assessment-center-4" type="radio" value="4" name="assessment-center" class="hidden peer">
+                                        <label for="assessment-center-4"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white cursor-pointer hover:bg-gray-400 transition duration-200 ease-in-out">4</label>
+                                    </div>
+                                    <div class="flex items-center w-20 md:w-28 max-w-full">
+                                        <input id="assessment-center-5" type="radio" value="5" name="assessment-center" class="hidden peer">
+                                        <label for="assessment-center-5"
+                                            class="w-full p-2 text-center text-sm font-medium text-gray-900 rounded-lg bg-gray-300 peer-checked:bg-primary peer-checked:text-white cursor-pointer hover:bg-gray-400 transition duration-200 ease-in-out">Sehr
+                                            gut</label>
+                                    </div>
+                                </div>
+
+                                <!-- KI -->
+                                <h5 class="text-gray-500 text-sm font-medium">
+                                    Basierend auf der Auswertung des Assessment-Centers, wird die Bewertung durch die KI mit <span class="font-bold">3</span> empfohlen.
+                                </h5>
+                            </div>
+                            <!-- divider -->
+                            <hr>
+                            <!-- personality overall -->
+                            <div class="flex flex-col gap-2.5">
+                                <h5 class="font-medium text-sm">
+                                    Wie schätzen Sie die Gesamtbewertung in Bezug auf die Persönlichkeit des Bewerbers?
+                                </h5>
+                                <div class="flex gap-2 items-center flex-wrap">
+                                    <div class="flex items-center w-20 md:w-28 max-w-full">
+                                        <input id="personality-overall-1" type="radio" value="bad" name="personality-overall" class="hidden peer">
+                                        <label for="personality-overall-1"
+                                            class="flex items-center gap-2 w-full p-2 text-center text-sm font-medium bg-red-statistics red-statistics rounded-lg outline outline-2 outline-offset-2 outline-transparent peer-checked:outline-calmaroi-red cursor-pointer">
+                                            <svg class="w-1 h-6" viewBox="0 0 5 30" xmlns="http://www.w3.org/2000/svg">
+                                                <rect y="0.5" width="5" height="30" fill="currentColor" />
+                                            </svg>
+                                            Schlecht
+                                        </label>
+                                    </div>
+                                    <div class="flex items-center w-20 md:w-28 max-w-full">
+                                        <input checked id="personality-overall-2" type="radio" value="ok" name="personality-overall" class="hidden peer">
+                                        <label for="personality-overall-2"
+                                            class="flex items-center gap-2 w-full p-2 text-center text-sm font-medium bg-orange-statistics orange-statistics rounded-lg outline outline-2 outline-offset-2 outline-transparent peer-checked:outline-calmaroi-orange cursor-pointer">
+                                            <svg class="w-1 h-6" viewBox="0 0 5 30" xmlns="http://www.w3.org/2000/svg">
+                                                <rect y="0.5" width="5" height="30" fill="currentColor" />
+                                            </svg>
+                                            Mittel
+                                        </label>
+                                    </div>
+                                    <div class="flex items-center w-20 md:w-28 max-w-full">
+                                        <input checked id="personality-overall-3" type="radio" value="good" name="personality-overall" class="hidden peer">
+                                        <label for="personality-overall-3"
+                                            class="flex items-center gap-2 w-full p-2 text-center text-sm font-medium bg-green-statistics green-statistics rounded-lg outline outline-2 outline-offset-2 outline-transparent peer-checked:outline-calmaroi-green cursor-pointer">
+                                            <svg class="w-1 h-6" viewBox="0 0 5 30" xmlns="http://www.w3.org/2000/svg">
+                                                <rect y="0.5" width="5" height="30" fill="currentColor" />
+                                            </svg>
+                                            Gut
+                                        </label>
+                                    </div>
+                                </div>
+                                <h5 class="text-gray-500 text-sm font-medium mt-2">
+                                    Basierend auf bisherige Ergebnisse, wird die Bewertung durch die KI mit <span class="font-semibold text-calmaroi-orange">Mittel</span> empfohlen.
+                                </h5>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
 </main>
 
-{% endblock %} 
+{% endblock %}
+
+{% block right_navbuttons %}
+{% include 'dashboard/application/common/side_navigation_toggler.html' %}
+{% endblock %}
 
 {% block right_sidebar %}
-    {% include 'dashboard/application/common/side_navigation.html' %}
+{% include 'dashboard/application/common/side_navigation.html' %}
 {% endblock %}
 
 {% block scripts %}

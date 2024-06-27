@@ -19,7 +19,7 @@
                 <div class="flex flex-col bg-white shadow-sm rounded-lg">
                     <!-- accordion header -->
                     <div class="flex items-center gap-2 p-5 justify-between flex-wrap flex-1">
-                        <h5 class="font-medium text-[17px]">
+                        <h5 class="font-medium text-[17px] text-gray-900">
                             Zeitplan
                         </h5>
                         <div class="flex items-stretch gap-2 ml-auto">
@@ -181,6 +181,10 @@
     </div>
 </main>
 
+{% endblock %}
+
+{% block right_navbuttons %}
+    {% include 'dashboard/application/common/side_navigation_toggler.html' %}
 {% endblock %}
 
 {% block right_sidebar %}
