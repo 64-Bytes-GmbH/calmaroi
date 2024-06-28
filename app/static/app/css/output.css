@@ -1820,6 +1820,12 @@ input:checked + .toggle-bg {
   margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .space-y-16 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(4rem * calc(1 - var(--tw-space-y-reverse)));
@@ -1830,12 +1836,6 @@ input:checked + .toggle-bg {
   --tw-space-y-reverse: 0;
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
-}
-
-.space-x-4 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1rem * var(--tw-space-x-reverse));
-  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .divide-y > :not([hidden]) ~ :not([hidden]) {
@@ -2865,6 +2865,15 @@ input:checked + .toggle-bg {
     border-bottom-left-radius: 1rem;
   }
 
+  .md\:bg-white {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  }
+
+  .md\:bg-opacity-30 {
+    --tw-bg-opacity: 0.3;
+  }
+
   .md\:p-12 {
     padding: 3rem;
   }
@@ -2890,20 +2899,20 @@ input:checked + .toggle-bg {
 }
 
 @media (min-width: 1024px) {
-  .lg\:h-12 {
-    height: 3rem;
-  }
-
   .lg\:h-10 {
     height: 2.5rem;
   }
 
-  .lg\:w-12 {
-    width: 3rem;
+  .lg\:h-12 {
+    height: 3rem;
   }
 
   .lg\:w-10 {
     width: 2.5rem;
+  }
+
+  .lg\:w-12 {
+    width: 3rem;
   }
 }
 
